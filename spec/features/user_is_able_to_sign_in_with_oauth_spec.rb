@@ -1,9 +1,11 @@
 require 'rails_helper'
+# before do
+#   Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+# end
 
   def stub_omniauth
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google] =
-    OmniAuth::AuthHash.new({
+    OmniAuth.config.add_mock(:google, {
       provider: "google",
       uid: "12345",
       info: {
@@ -15,13 +17,16 @@ require 'rails_helper'
       credentials: {
         token: "123e45",
         refresh_token: "34534232",
-        expires_at: DateTime.now,
+        expires_at: DateTime.now
       }
       })
   end
 
-
   describe 'user can sign in'  do
+    require "pry"; binding.pry
+    before do
+      Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+    end
     context 'from the home page'  do
       it 'with oauth'  do
       stub_omniauth
