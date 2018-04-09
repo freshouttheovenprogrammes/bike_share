@@ -1,3 +1,5 @@
 # bike_share
 
- - Don't forget to rails db:create!
+# Forget Me Nots
+- bundle install
+- rails db:create
