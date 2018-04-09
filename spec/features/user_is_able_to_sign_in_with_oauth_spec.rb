@@ -15,11 +15,10 @@ require 'rails_helper'
       credentials: {
         token: "123e45",
         refresh_token: "34534232",
-        expires_at: DateTime.now
+        expires_at: DateTime.now,
       }
-
       })
-    end
+  end
 
 
   describe 'user can sign in'  do
@@ -33,7 +32,7 @@ require 'rails_helper'
 
       click_link "Sign in with Google"
 
-      expect(page).to have_content("Kyle Sallette")
+      expect(page).to have_content("kyle sallette")
 
       expect(page).to have_link("Logout")
 
