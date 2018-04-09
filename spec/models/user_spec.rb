@@ -18,6 +18,7 @@ describe User, type: :model do
       }
     }
     User.update_or_create(auth)
+    # require "pry"; binding.pry
     new_user = User.first
 
     expect(new_user.provider).to eq(auth[:provider])
