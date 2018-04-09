@@ -12,7 +12,7 @@ describe User, type: :model do
         image: "www.image.com/image.jpg",
       },
       credentials: {
-        oauth_token: "hagshagshsag",
+        token: "hagshagshsag",
         refresh_token: "blajw224",
         expires_at: DateTime.now
       }
@@ -26,8 +26,8 @@ describe User, type: :model do
     expect(new_user.first_name).to eq(auth[:info][:first_name])
     expect(new_user.last_name).to eq(auth[:info][:last_name])
     expect(new_user.image).to eq(auth[:info][:image])
-    expect(new_user.oauth_token).to eq(auth[:credentials][:oauth_token])
-    expect(new_user.oauth_token).to eq(auth[:credentials][:refresh_token])
-    expect(new_user.oauth_token).to eq(auth[:credentials][:expires_at])
+    expect(new_user.oauth_token).to eq(auth[:credentials][:token])
+    expect(new_user.refresh_token).to eq(auth[:credentials][:refresh_token])
+    expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
   end
 end
