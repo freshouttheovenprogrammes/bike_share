@@ -4,6 +4,19 @@ require 'rails_helper'
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google] =
     OmniAuth::AuthHash.new({
+      provider: "google",
+      uid: "12345",
+      info: {
+        email: "test@google.com",
+        first_name: "kyle",
+        last_name: "sallette",
+        image: "something.jpg"
+      },
+      credentials: {
+        token: "123e45",
+        refresh_token: "34534232",
+        expires_at: DateTime.now
+      }
 
       })
     end
