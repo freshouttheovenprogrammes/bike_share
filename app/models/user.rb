@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_secure_password validations: false
-  # validates :password, if: -> { password.present? }
 
   def self.update_or_create(auth)
     where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize.tap do |user|
