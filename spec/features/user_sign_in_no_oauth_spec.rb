@@ -10,7 +10,7 @@ describe "as a user" do
       expect(page).to have_content("Sign Up For An Account!")
       click_link("Sign Up For An Account!")
 
-      expect(current_path).to eq "users/new"
+      expect(current_path).to eq "/users/new"
 
       fill_in("user[username]").with "Testyguy"
       fill_in("user[email]").with "test@gmail.com"
