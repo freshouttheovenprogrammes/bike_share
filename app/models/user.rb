@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password validations: false
-  validates :username, uniqueness: { case_sensitive: false }, allow_nil: true
+  validates :username, uniqueness: { case_sensitive: false }
   def self.update_or_create(auth)
     where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize.tap do |user|
       user.provider = auth[:provider]
