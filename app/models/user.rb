@@ -11,7 +11,7 @@ class User < ApplicationRecord
       image: auth[:info][:image],
       oauth_token: auth[:credentials][:token],
       refresh_token: auth[:credentials][:refresh_token],
-      oauth_expires_at: auth[:credentials][:expires_at]
+      oauth_expires_at: Time.at(auth[:credentials][:expires_at])
     }
     user.save!
     user
