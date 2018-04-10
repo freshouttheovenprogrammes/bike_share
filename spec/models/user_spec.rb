@@ -13,12 +13,10 @@ describe User, type: :model do
       },
       credentials: {
         token: "hagshagshsag",
-        refresh_token: "blajw224",
         expires_at: DateTime.now
       }
     }
     User.update_or_create(auth)
-    # require "pry"; binding.pry
     new_user = User.first
 
     expect(new_user.provider).to eq(auth[:provider])
@@ -28,7 +26,6 @@ describe User, type: :model do
     expect(new_user.last_name).to eq(auth[:info][:last_name])
     expect(new_user.image).to eq(auth[:info][:image])
     expect(new_user.oauth_token).to eq(auth[:credentials][:token])
-    expect(new_user.refresh_token).to eq(auth[:credentials][:refresh_token])
     expect(new_user.oauth_expires_at).to eq(auth[:credentials][:expires_at])
   end
 end
