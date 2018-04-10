@@ -18,7 +18,7 @@ describe "as a user" do
       click_link("Register")
 
       new_user = User.last
-      expect(current_path).to eq user_show_path(new_user)
+      expect(current_path).to eq users_show_path(new_user)
       expect(page).to have_content("Welcome to your profile, #{new_user.username}!")
       end
     end

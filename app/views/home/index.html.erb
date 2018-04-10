@@ -1,6 +1,6 @@
 <div class="home-page-local-db-sign-in">
   <% if !current_user %>
-    <%= link_to "Sign Up For An Account!", new_user_path %>
+    <%= link_to "Sign Up For An Account!", new_users_path %>
   <% else %>
     <p>Welcome back, <%= current_user.first_name %></p>
   <% end %>
