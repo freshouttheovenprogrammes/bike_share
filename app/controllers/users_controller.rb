@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def user_params
     if params[:user][:provider] == nil
-      params.require(:user).permit(:username, :email, :password)
+      params.require(:user).permit(:username, :email, :first_name, :last_name, :password)
     else
       params.require(:user).permit(:provider, :uid, :first_name, :last_name, :email, :oauth_token, :oauth_expires_at)
     end
