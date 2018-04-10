@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action
+  before_action :set_user, only: [:show]
 
   def new
     @user = User.new
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:id])
   end
 
   private
@@ -27,6 +26,10 @@ class UsersController < ApplicationController
     else
       params.require(:user).permit(:provider, :uid, :first_name, :last_name, :email, :oauth_token, :oauth_expires_at)
     end
+  end
+
+  def set_user
+    @user = User.find_by(params[:id])
   end
 
 end
