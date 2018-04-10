@@ -12,13 +12,13 @@ describe "as a user" do
 
       expect(current_path).to eq "/users/new"
 
-      fill_in("user[username]").with "Testyguy"
-      fill_in("user[email]").with "test@gmail.com"
-      fill_in("user[password]").with "test123"
-      click_link("Register")
+      fill_in "user[username]", with: "Testyguy"
+      fill_in "user[email]", with: "test@gmail.com"
+      fill_in "user[password]", with: "test123"
+      click_on("Register")
 
       new_user = User.last
-      expect(current_path).to eq users_show_path(new_user)
+      expect(current_path).to eq users_path(new_user)
       expect(page).to have_content("Welcome to your profile, #{new_user.username}!")
       end
     end
