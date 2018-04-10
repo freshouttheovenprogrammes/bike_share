@@ -33,8 +33,8 @@ describe User, type: :model do
     expect(user).to be_valid
   end
   it "uniqueness of username regardless of case_use" do
-    User.create(username: "TEsTnAmE", first_name: "Bob", last_name: "Still bob", password: "badpassword", email: "email@email.com")
-    user2 = User.create(username: "testname", first_name: "2222Bob", last_name: "2222Still bob", password: "badpassword", email: "23232email@email.com")
+    User.create(username: "TEsTnAmE", first_name: "Bob", last_name: "Still bob", password: "badpassword", email: "email@email.com", role: "default")
+    user2 = User.create(username: "testname", first_name: "2222Bob", last_name: "2222Still bob", password: "badpassword", email: "23232email@email.com", role: "admin")
 
     expect(user2).to_not be_valid
   end
