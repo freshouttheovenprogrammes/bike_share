@@ -50,10 +50,11 @@ ActiveRecord::Schema.define(version: 20180410195122) do
     t.string "email"
     t.string "image"
     t.string "oauth_token"
-    t.string "refresh_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   add_foreign_key "order_items", "items"
