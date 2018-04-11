@@ -48,3 +48,14 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+.background-img {
+  background: url("/bicycle-bridge-background.jpg") no-repeat center center fixed;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
