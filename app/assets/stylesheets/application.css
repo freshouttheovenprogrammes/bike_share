@@ -59,3 +59,49 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.home-page-local-db-sign-in{
+  margin-top: 20%;
+  width: 30%;
+
+  height: 200px;
+  margin-left: 35%;
+  align-content: center;
+  text-align: center;
+  border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius:15px;
+background-color: #e2e2e2;
+-webkit-box-shadow:0 0 20px white;
+-moz-box-shadow: 0 0 20px white;
+box-shadow:0 0 20px white;
+border:3px solid black;
+}
+
+.home-page-local-db-sign-in p{
+  margin-top: 20%;
+
+}
+
+body {
+   background-image: url("bicycle-bridge-background.jpg");
+     background-repeat: no-repeat;
+       background-attachment: fixed;
+     background-size: cover;
+}
+
+.new-user-form{
+  margin-top: 15%;
+  width: 20%;
+  height: 300px;
+  background-color: #e2e2e2;
+  -webkit-box-shadow:0 0 20px white;
+-moz-box-shadow: 0 0 20px white;
+box-shadow:0 0 20px white;
+border:3px solid black;
+
+
+margin-left: 39%;
+
+}
