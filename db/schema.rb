@@ -10,15 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410220114) do
+ActiveRecord::Schema.define(version: 20180413164952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_credentials", force: :cascade do |t|
+    t.string "password_digest"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_app_credentials_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "google_credentials", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "oauth_token"
+    t.string "oauth_expires_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_google_credentials_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -51,21 +66,18 @@ ActiveRecord::Schema.define(version: 20180410220114) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
     t.string "image"
-    t.string "oauth_token"
-    t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "password_digest"
     t.integer "role", default: 0
   end
 
+  add_foreign_key "app_credentials", "users"
+  add_foreign_key "google_credentials", "users"
   add_foreign_key "items", "categories", column: "categories_id"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
