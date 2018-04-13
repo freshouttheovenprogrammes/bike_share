@@ -18,14 +18,13 @@ describe User, type: :model do
     }
     User.update_or_create(auth)
     new_user = User.first
-
-    expect(new_user.provider).to eq(auth[:provider])
-    expect(new_user.uid).to eq(auth[:uid])
+    expect(new_user.google_credential.provider).to eq(auth[:provider])
+    expect(new_user.google_credential.uid).to eq(auth[:uid])
     expect(new_user.email).to eq(auth[:info][:email])
     expect(new_user.first_name).to eq(auth[:info][:first_name])
     expect(new_user.last_name).to eq(auth[:info][:last_name])
     expect(new_user.image).to eq(auth[:info][:image])
-    expect(new_user.oauth_token).to eq(auth[:credentials][:token])
+    expect(new_user.google_credential.oauth_token).to eq(auth[:credentials][:token])
   end
   it "regular user can be created" do
     user = User.create!(username: "Testname", first_name: "Bob", last_name: "Still bob", password: "badpassword", email: "email@email.com")
