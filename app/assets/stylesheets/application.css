@@ -73,9 +73,9 @@ border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
 border-bottom-left-radius:15px;
 background-color: #e2e2e2;
--webkit-box-shadow:0 0 20px white;
--moz-box-shadow: 0 0 20px white;
-box-shadow:0 0 20px white;
+-webkit-box-shadow:0 0 60px white;
+-moz-box-shadow: 0 0 60px white;
+box-shadow:0 0 60px white;
 border:3px solid black;
 }
 
@@ -96,12 +96,69 @@ body {
   width: 20%;
   height: 300px;
   background-color: #e2e2e2;
-  -webkit-box-shadow:0 0 20px white;
--moz-box-shadow: 0 0 20px white;
-box-shadow:0 0 20px white;
+  -webkit-box-shadow:0 0 60px white;
+  -moz-box-shadow: 0 0 60px white;
+  box-shadow:0 0 60px white;
 border:3px solid black;
+text-align: center;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius:15px;
 
 
 margin-left: 39%;
 
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 19.4%;
+     display: inline-block;
+      margin-right: 20px;
+      background-color: #e5e5e5;
+      margin-top: 20px;
+      -webkit-box-shadow:0 0 20px white;
+      -moz-box-shadow: 0 0 20px white;
+      box-shadow:0 0 20px white;
+      border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius:15px;
+    margin-top: 10%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border:3px solid black;
+
+
+
+
+}
+
+
+.container {
+    padding: 2px 16px;
+    -webkit-box-shadow:0 0 20px white;
+    -moz-box-shadow: 0 0 20px white;
+    box-shadow:0 0 20px white;
+    border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius:15px;
+
+
+
+
+
+
+}
+
+.user {
+  text-align: right;
+  color: white;
+}
+.icon {
+  margin-left: 15px;
 }
