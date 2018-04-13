@@ -1,7 +1,11 @@
 <%@items.each do |item| %>
+<div class="card animated zoomInDown">
 <%= image_tag(item.image, size: "150x150" ) %><br/>
+<div class="container animated zoomInDown">
 <h1><%= item.title %></h1><br>
 <h3><%= item.description %></h3>
 <h3>$<%= item.price %></h3>
 <h4>Quantity:<%= item.quantity %></h4>
+</div>
+</div>
 <% end %>
