@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413164818) do
+ActiveRecord::Schema.define(version: 20180413164952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20180413164818) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "google_credentials", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "oauth_token"
+    t.string "oauth_expires_at"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_google_credentials_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -68,6 +77,7 @@ ActiveRecord::Schema.define(version: 20180413164818) do
   end
 
   add_foreign_key "app_credentials", "users"
+  add_foreign_key "google_credentials", "users"
   add_foreign_key "items", "categories", column: "categories_id"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
