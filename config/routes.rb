@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'auth/google', as: 'google_login'
-  get 'auth/:provider/callback', to: 'google_sessions#create'
+  get 'auth/:provider/callback', to: 'googlesessions#create'
   get 'login', to: 'sessions#create', as: 'signin'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

@@ -6,12 +6,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    if @user.save
+    app_credential = AppCredential.new(credential_params)
+    user = app_credential.create_user(user_params)
+    if app_credential.save && user.save
+      flash[:notice] = "Welcome to BikeShare!"
       session[:user_id] = @user.id
       redirect_to users_path(@user)
     else
-      render :new
+      flash[:error] = "There was an error processing your account!"
+      redirect_to root_path
     end
   end
 
