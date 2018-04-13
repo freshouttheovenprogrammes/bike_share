@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.update_or_create(request.env["omniauth.auth"])
-    session[:user_id] = user.id
-    redirect_to root_path
+    user = User.find_by(email: params[:email])
+    if user && user.app_credentials.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      flash[:error] = "Could not validate credentials"
+      redirect_to root_path
+    end
   end
 
   def destroy
-    session[:user_id] = nil
+    session.clear
     redirect_to root_path
   end
 end
