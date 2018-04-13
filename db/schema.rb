@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413164709) do
+ActiveRecord::Schema.define(version: 20180413164818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_credentials", force: :cascade do |t|
+    t.string "password_digest"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_app_credentials_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 20180413164709) do
     t.integer "role", default: 0
   end
 
+  add_foreign_key "app_credentials", "users"
   add_foreign_key "items", "categories", column: "categories_id"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
