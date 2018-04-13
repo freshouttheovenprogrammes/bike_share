@@ -6,11 +6,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    # require "pry"; binding.pry
     app_credential = AppCredential.new(credential_params)
-    # require "pry"; binding.pry
     user = app_credential.create_user(user_params)
-    # require "pry"; binding.prys
     if app_credential.save && user.save
       flash[:notice] = "Welcome to BikeShare!"
       session[:user_id] = @user.id
@@ -31,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def credential_params
-    params.permit(:password, :password_confirmation)
+    params.permit(:password)
   end
 
   def set_user
