@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413164952) do
+ActiveRecord::Schema.define(version: 20180413190239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20180413164952) do
     t.string "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "categories_id"
-    t.index ["categories_id"], name: "index_items_on_categories_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20180413164952) do
 
   add_foreign_key "app_credentials", "users"
   add_foreign_key "google_credentials", "users"
-  add_foreign_key "items", "categories", column: "categories_id"
+  add_foreign_key "items", "categories"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
 end
