@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BikeShare</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'images/favicon.png' %>
   </head>
 
   <body>
-    <div class="google-sign-in">
-      <% if current_user %>
-        <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-      <% end %>
-    </div>
+   <div class="nav-bar-container">
+     <div class="nav-bar-links">
+       <%= link_to "Home", root_path %>
+       <div class="google-sign-in">
+        <% if current_user %>
+          <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
+          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <% else %>
+          <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+          <%= link_to "Log In", signin_path %>
+        <% end %>
+      </div> <!-- google-sign-in -->
+    </div> <!-- nav-bar-links -->
+  </div> <!-- nav-bar-container -->
+  <div class="background-container">
+    <div class="background-img">
+      <img src="app/assets/images/bicycle-bridge-background.jpg" alt="background image">
+    </div> <!-- background-img -->
+  </div>  <!-- background-container -->
     <%= yield %>
+
+
   </body>
 
   </html>

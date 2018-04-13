@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+ *,
+ *:before,
+ *:after {
+    box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+.nav-bar-container {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: black;
+}
+
+.nav-bar-links a {
+  float: left;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.nav-bar-links a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.background-img {
+  background: url("/bicycle-bridge-background.jpg") no-repeat center center fixed;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
