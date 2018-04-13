@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    require "pry"; binding.pry
     if user && user.app_credentials.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to users_path(user)
