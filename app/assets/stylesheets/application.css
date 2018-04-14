@@ -30,9 +30,10 @@ body {
 
 .nav-bar-container {
   overflow: hidden;
-  position: fixed;
-  top: 0px;
-  width: 100%;
+   top: 0;
+   width: 100%;
+   position: fixed;
+   z-index: 300;
   background-color: black;
 }
 
@@ -161,4 +162,57 @@ margin-left: 39%;
 }
 .icon {
   margin-left: 15px;
+}
+
+
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+
+.flash-container {
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.flash {
+  @include text-background;
+  z-index: 1;
+  position: relative;
+  min-width: 200px;
+  padding: 15px;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 15s;
+  &:hover {cursor: default;}
 }
