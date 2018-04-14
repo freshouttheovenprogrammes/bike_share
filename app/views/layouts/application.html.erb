@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
 
+
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <title>BikeShare</title>
     <%= csrf_meta_tags %>
@@ -28,15 +29,7 @@
           <%= link_to "Log In", signin_path %>
           <%= link_to "Register New Account", new_users_path %>
         <% end %>
-        <% unless flash.empty? %>
-        <div class="flash-container">
-          <div class="flash" >
-            <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg.html_safe, class: name %>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
+
       </div> <!-- google-sign-in -->
     </div> <!-- nav-bar-links -->
   </div> <!-- nav-bar-container -->
@@ -44,6 +37,9 @@
 
   </div>  <!-- background-container -->
 
+  <% if flash[:notice] -%>
+  <div class = "alert alert-success"><%= flash[:notice] %></div>
+  <% end %>
     <%= yield %>
 
 
