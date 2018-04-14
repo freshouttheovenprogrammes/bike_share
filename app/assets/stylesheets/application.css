@@ -38,11 +38,12 @@ body {
 }
 
 .nav-bar-links a {
-  float: left;
+  float: center;
   color: #f2f2f2;
-  text-align: left;
+  text-align: right;
   padding: 14px 16px;
   font-size: 17px;
+
 }
 
 .nav-bar-links a:hover {
@@ -159,6 +160,7 @@ margin-left: 39%;
 .user {
   text-align: right;
   color: white;
+  margin-right: 2%;
 }
 .icon {
   margin-left: 15px;
@@ -203,3 +205,7 @@ margin-left: 39%;
     color: #468847;
     text-align: left;
  }
+
+.cart-index{
+  margin-top: 50px;
+}

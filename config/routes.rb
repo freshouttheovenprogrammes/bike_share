@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   resource :users
 
+   get "/cart", to: "carts#index"
+
     resources :items, only: [:index, :new, :destroy, :edit, :update, :create, :show]
 end
