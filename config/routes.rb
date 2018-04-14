@@ -5,8 +5,20 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   root to: "home#index"
+
+  resources :categories, only: [:index] do
+  end
+  get "/bikes", to: "items#index"
+    get "/accessories", to: "items#index"
+      get "/tools", to: "items#index"
+        get "/lessons", to: "items#index"
+  resources :carts, only: [:create]
+
   resources :sessions, only: [:create, :destroy]
+
   resource :home, only: [:show]
+
   resource :users
+
     resources :items, only: [:index, :new, :destroy, :edit, :update, :create, :show]
 end
