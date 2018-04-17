@@ -1,3 +1,15 @@
 .DS_Store
 coverage
 application.yml
+
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/node_modules
+/yarn-error.log
+
+.byebug_history
+
+/db/csv
