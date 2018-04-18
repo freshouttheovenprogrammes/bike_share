@@ -5,9 +5,9 @@ FactoryBot.define do
     sequence :email { |n| "email#{n}@gmail.com" }
     before(:create) do |user|
       user.create_app_credential(password: "test123")
+      end
     end
-    end
-  end
+
 
   factory :google_user, class: User do
     sequence :first_name { |n| "first_name#{n}" }
@@ -29,6 +29,7 @@ FactoryBot.define do
     sequence role: "admin"
     before(:create) do |user|
       user.create_app_credential(password: "test123")
+
     end
   end
 end
