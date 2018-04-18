@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
 
+  def new
+  end
+
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.app_credentials.authenticate(params[:password])
+    user = User.find_by(username: params[:username])
+    if user && user.app_credential.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to users_path(user)
     else
-
       flash[:error] = "Could not validate credentials"
       redirect_to root_path
     end

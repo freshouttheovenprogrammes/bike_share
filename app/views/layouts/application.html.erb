@@ -25,7 +25,7 @@
           <p>Cart: <%= @cart.total_count %></p>
           </div>
             <%= link_to "Home", root_path %>
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <%= link_to "Sign Out", signout_path, id: "sign_out" %>
           <%= link_to "Visit Store", items_path, id: "store_link" %>
         <% else %>
           <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
