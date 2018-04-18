@@ -19,10 +19,10 @@ require 'rails_helper'
       })
   end
 
-  describe 'user can sign in'  do
-    context 'from the home page'  do
-      xit 'with oauth'  do
-      stub_omniauth
+  describe 'user can sign in' do
+    context 'from the home page' do
+      let(:google_user) { FactoryBot.create :google_user }
+      xit 'with oauth' do
 
       visit root_path
 
@@ -30,10 +30,8 @@ require 'rails_helper'
 
       click_link "Sign in with Google"
 
-      expect(page).to have_content("kyle sallette")
-
+      expect(page).to have_content("#{google_user.first_name} #{google_user.last_name}")
       expect(page).to have_link("Logout")
-
       end
     end
   end
