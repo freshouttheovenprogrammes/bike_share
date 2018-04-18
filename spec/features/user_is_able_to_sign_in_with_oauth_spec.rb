@@ -20,10 +20,6 @@ require 'rails_helper'
   end
 
   describe 'user can sign in'  do
-    # require "pry"; binding.pry
-    # before do
-    #   Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
-    # end
     context 'from the home page'  do
       xit 'with oauth'  do
       stub_omniauth
