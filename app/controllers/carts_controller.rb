@@ -11,4 +11,13 @@ class CartsController < ApplicationController
 
     redirect_to items_path, notice:"You now have #{pluralize(@cart.count_of(@item.id), @item.title)} in cart."
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @cart = Cart.find(params[:id])
+    @cart.remove_item(@item.id)
+    session[:cart] = @cart.contents
+
+    redirect_to items_path, notice:"You now have #{pluralize(@cart.count_of(@item.id), @item.title)} in cart."
+  end
 end

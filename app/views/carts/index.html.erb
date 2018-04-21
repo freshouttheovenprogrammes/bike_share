@@ -7,6 +7,7 @@
 <h1><%= Item.find(key).title  %></h1><br>
 <h3><%= Item.find(key).description %></h3>
 <h3>$<%= Item.find(key).price%></h3>
+<%= button_to "Delete Item From Cart", cart_path(@cart), method: :delete %>
 </div>
 </div>
 <% end %>

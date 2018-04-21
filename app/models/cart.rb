@@ -13,6 +13,10 @@ class Cart
     contents[id.to_s] = contents[id.to_s].to_i + 1
   end
 
+  def remove_item(id)
+    contents[id.to_s] = contents[id.to_is].to_i - 1
+  end
+
   def count_of(id)
     contents[id.to_s].to_i
   end

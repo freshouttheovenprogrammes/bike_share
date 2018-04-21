@@ -6,19 +6,19 @@ class ItemsController < ApplicationController
 
   def index
     if request.path.split('/').last == "bikes"
-      @items = Item.where(categories_id: 1 )
+      @items = Item.where(category_id: 1 )
       @cart = Cart.new(session[:cart])
     elsif request.path.split('/').last == "accessories"
-      @items = Item.where(categories_id: 2 )
+      @items = Item.where(category_id: 2 )
       @cart = Cart.new(session[:cart])
     elsif  request.path.split('/').last == "tools"
-      @items = Item.where(categories_id: 3 )
+      @items = Item.where(category_id: 3 )
       @cart = Cart.new(session[:cart])
     elsif  request.path.split('/').last == "lessons"
-      @items = Item.where(categories_id: 4 )
+      @items = Item.where(category_id: 4 )
       @cart = Cart.new(session[:cart])
     elsif  request.path.split('/').last == "items"
-      @items = Item.order(:categories_id)
+      @items = Item.order(:category_id)
       @cart = Cart.new(session[:cart])
     end
   end

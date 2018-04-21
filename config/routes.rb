@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get "/accessories", to: "items#index"
       get "/tools", to: "items#index"
         get "/lessons", to: "items#index"
-  resources :carts, only: [:create]
+  resources :carts, only: [:create, :destroy]
 
   resources :sessions, only: [:create, :destroy]
 
