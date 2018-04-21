@@ -6,9 +6,9 @@ require 'rails_helper'
         cat = Category.create(title: "bikes")
         cat = Category.create(title: "parts")
         item1 = Item.create(title: "bike", description: "need i say more",
-        price: 666, image: "fixed_gear.png", quantity: 20, categories_id: 1 )
+        price: 666, image: "fixed_gear.png", quantity: 20, category_id: 1 )
         item2 = Item.create(title: "not bike", description: "more not bikes",
-        price: 123, image: "fixed_gear.png", quantity: 2, categories_id: 2 )
+        price: 123, image: "fixed_gear.png", quantity: 2, category_id: 2 )
         visit "/"
 
         expect(page).to have_content("Sign Up For An Account!")
