@@ -5,15 +5,14 @@ describe "user navigates to shop index" do
     it "they can delete item after added to cart" do
       item1 = Item.create(title: "poop", description: "need i say more",
       price: 666, image: "fixed_gear.png", quantity: 20 )
-
       visit items_path
 
       click_button('Add Item')
 
-      visit cart_path
+      visit carts_path
       save_and_open_page
       click_on('Delete Item From Cart')
-      expect(current_path).to eq cart_path
+      expect(current_path).to eq cart_path(cart)
 
       expect(page).to_not have_content(item1.title)
       expect(page).to_not have_content(item1.description)
