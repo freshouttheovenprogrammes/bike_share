@@ -1,0 +1,16 @@
+<div class="icon">
+  <img class="image animated flipInX" src="https://preview.ibb.co/e8FznS/icon.png" height="40px" width="40px">
+</div>
+  <%@bikes.each do |bike| %>
+    <div class="card animated zoomInDown">
+      <%= image_tag(bike.image, size: "150x150" ) %><br/>
+      <div class="container animated zoomInDown" id="bike_<%= bike.id %>">
+        <h1><%= bike.title %></h1><br>
+        <h3><%= bike.description %></h3>
+        <h3>$<%= bike.price %></h3>
+        <h4>Quantity:<%= bike.quantity %></h4>
+        <%= button_to "Add Item To Cart", cart_index_path(item_id: bike.id), class: "btn btn-danger" %>
+        <%= button_to "Delete Item From Cart", cart_index_path(item_id: bike.id), class: "btn btn-danger" %>
+      </div>
+    </div>
+<% end %>
