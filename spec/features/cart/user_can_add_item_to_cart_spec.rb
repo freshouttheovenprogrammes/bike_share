@@ -24,7 +24,7 @@ require 'rails_helper'
 
         click_button('Add Item To Cart')
 
-        visit carts_path
+        visit cart_index_path
 
         expect(page).to have_content(item1.title)
         expect(page).to have_content(item1.description)

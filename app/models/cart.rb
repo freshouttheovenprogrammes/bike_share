@@ -14,6 +14,7 @@ class Cart
   end
 
   def remove_item(id)
+    contents.delete(id)
     contents[id.to_s] = contents[id.to_s].to_i - 1
   end
 

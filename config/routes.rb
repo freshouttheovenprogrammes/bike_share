@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get "/tools", to: "items#index"
         get "/lessons", to: "items#index"
   resources :categories, only: [:index]
-  resources :carts, only: [:create, :destroy, :index]
+  resources :cart, only: [:create, :index, :destroy]
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resource :users

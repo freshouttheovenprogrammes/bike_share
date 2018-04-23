@@ -9,8 +9,8 @@
 <h3><%= item.description %></h3>
 <h3>$<%= item.price %></h3>
 <h4>Quantity:<%= item.quantity %></h4>
-  <%= button_to "Add Item To Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
-  <%= button_to "Delete Item From Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
+  <%= button_to "Add Item To Cart", cart_index_path(item_id: item.id), class: "btn btn-danger" %>
+  <%= button_to "Delete Item From Cart", cart_index_path(item_id: item.id), class: "btn btn-danger" %>
 </div>
 </div>
 <% end %>
