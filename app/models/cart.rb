@@ -22,4 +22,11 @@ class Cart
     contents[id.to_s].to_i
   end
 
+  def total_sum
+    # require "pry"; binding.pry
+    contents.keys.reduce(0) do |memo, item_id|
+      memo += Item.where(id: item_id).first.price
+    end
+  end
+
 end

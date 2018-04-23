@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  # get "/bikes", to: "items#index"
-    # get "/accessories", to: "items#index"
-    #   get "/tools", to: "items#index"
-    #     get "/lessons", to: "items#index"
   resources :categories, only: [:index]
   resources :bikes, only: [:index]
   resources :accessories, only: [:index]
@@ -19,5 +15,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resource :users
-  resources :items, only: [:index, :new, :destroy, :edit, :update, :create, :show]
+  resources :items
 end

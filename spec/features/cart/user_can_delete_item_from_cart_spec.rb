@@ -23,7 +23,6 @@ describe "user navigates to shop index" do
       price: 333, image: "allen_set.png", quantity: 20 )
 
       visit items_path
-      save_and_open_page
       within('#item_1') do
         click_button('Add Item')
       end
