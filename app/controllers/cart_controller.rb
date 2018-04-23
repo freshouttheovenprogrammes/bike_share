@@ -15,9 +15,6 @@ class CartController < ApplicationController
     @item = Item.find(params[:id])
     @cart.remove_item(@item.id)
     session[:cart] = @cart.contents
-    redirect_to items_path  # notice: %Q["Successfully removed <a href="/#{@item.category}s/"#{@item.id}</a> from your cart."].html_safe
+    redirect_to items_path, notice:"You now have #{pluralize(@cart.count_of(@item.id), @item.title)} in cart."
   end
 end
-
-
-#  <a href="/jobs/list?job=#{update.id}">#{update.id}</a>]

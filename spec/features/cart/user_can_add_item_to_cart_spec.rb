@@ -34,7 +34,7 @@ require 'rails_helper'
         end
 
         visit cart_index_path
-        save_and_open_page
+
         expect(page).to have_content(item1.title)
         expect(page).to have_content(item1.description)
         expect(page).to have_content(item1.price)
