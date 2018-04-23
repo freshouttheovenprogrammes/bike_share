@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe "user navigates to shop index" do
-    # FactoryBot.create(:item)
   context "visit[items_path]" do
     it "they can delete item after added to cart" do
       item1 = Item.create(title: "poop", description: "need i say more",
