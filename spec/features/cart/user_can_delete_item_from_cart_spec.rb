@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe "user navigates to shop index" do
+    # FactoryBot.create(:item)
   context "visit[items_path]" do
     it "they can delete item after added to cart" do
       item1 = Item.create(title: "poop", description: "need i say more",
@@ -15,8 +16,7 @@ describe "user navigates to shop index" do
       expect(current_path).to eq items_path
       expect(page).to have_content("You now have 0 #{item1.title}s in cart.")
     end
-
-    xit "after item is deleted the quantity reduces by 1" do
+    it "after item is deleted the quantity reduces by 1" do
 
     end
   end
