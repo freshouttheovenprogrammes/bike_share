@@ -9,14 +9,11 @@ describe "user navigates to shop index" do
 
       click_button('Add Item')
 
-      visit carts_path
-      save_and_open_page
+      visit cart_index_path
       click_on('Delete Item From Cart')
-      expect(current_path).to eq carts_path
 
-      expect(page).to_not have_content(item1.title)
-      expect(page).to_not have_content(item1.description)
-      expect(page).to_not have_content(item1.price)
+      expect(current_path).to eq items_path
+      expect(page).to have_content("You now have 0 #{item1.title}s in cart.")
     end
 
     xit "after item is deleted the quantity reduces by 1" do
