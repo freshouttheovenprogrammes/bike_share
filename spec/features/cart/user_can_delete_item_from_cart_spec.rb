@@ -12,7 +12,7 @@ describe "user navigates to shop index" do
       visit carts_path
       save_and_open_page
       click_on('Delete Item From Cart')
-      expect(current_path).to eq cart_path(cart)
+      expect(current_path).to eq carts_path
 
       expect(page).to_not have_content(item1.title)
       expect(page).to_not have_content(item1.description)

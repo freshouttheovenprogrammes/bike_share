@@ -10,7 +10,6 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    require "pry"; binding.pry
     @item = Item.find(params[:item_id])
     # @cart = Cart.find(params[:id])
     @cart.remove_item(@item.id)

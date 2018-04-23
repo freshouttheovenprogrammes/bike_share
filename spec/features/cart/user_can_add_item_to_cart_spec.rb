@@ -22,9 +22,9 @@ require 'rails_helper'
 
         visit items_path
 
-        click_button('Add Item')
+        click_button('Add Item To Cart')
 
-        visit cart_path
+        visit carts_path
 
         expect(page).to have_content(item1.title)
         expect(page).to have_content(item1.description)
