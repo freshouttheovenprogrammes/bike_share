@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resource :users
-   get "/carts", to: "carts#index"
   resources :items, only: [:index, :new, :destroy, :edit, :update, :create, :show]
 end
