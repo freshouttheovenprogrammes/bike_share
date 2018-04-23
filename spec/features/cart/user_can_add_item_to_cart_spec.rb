@@ -6,6 +6,9 @@ require 'rails_helper'
         item1 = Item.create(title: "poop", description: "need i say more",
         price: 666, image: "fixed_gear.png", quantity: 20 )
 
+        item2 = Item.create(title: "poopy", description: "i say more",
+        price: 420, image: "fixed_gear.png", quantity: 20 )
+
         visit "/"
 
         expect(page).to have_content("Sign Up For An Account!")
@@ -22,13 +25,20 @@ require 'rails_helper'
 
         visit items_path
 
-        click_button('Add Item')
+        within "#item_1" do
+          click_button('Add Item To Cart')
+        end
 
-        visit cart_path
+        within "#item_2" do
+          click_button('Add Item To Cart')
+        end
+
+        visit cart_index_path
 
         expect(page).to have_content(item1.title)
         expect(page).to have_content(item1.description)
         expect(page).to have_content(item1.price)
+        expect(page).to have_content("Sum Of All Items: 1086")
       end
     end
   end

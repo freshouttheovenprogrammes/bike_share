@@ -1,0 +1,16 @@
+<div class="icon">
+  <img class="image animated flipInX" src="https://preview.ibb.co/e8FznS/icon.png" height="40px" width="40px">
+</div>
+  <%@tools.each do |tool| %>
+    <div class="card animated zoomInDown">
+      <%= image_tag(tool.image, size: "150x150" ) %><br/>
+      <div class="container animated zoomInDown" id="tool_<%= tool.id %>">
+        <h1><%= tool.title %></h1><br>
+        <h3><%= tool.description %></h3>
+        <h3>$<%= tool.price %></h3>
+        <h4>Quantity:<%= tool.quantity %></h4>
+        <%= button_to "Add Item To Cart", cart_index_path(item_id: tool.id), class: "btn btn-danger" %>
+        <%= button_to "Delete Item From Cart", cart_index_path(item_id: tool.id), class: "btn btn-danger" %>
+      </div>
+    </div>
+<% end %>
