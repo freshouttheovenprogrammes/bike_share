@@ -13,6 +13,13 @@ class Cart
     contents[id.to_s] = contents[id.to_s].to_i + 1
   end
 
+  def increase_item(id)
+    require "pry"; binding.pry
+  end
+
+  def decrease_item(id)
+  end
+
   def remove_item(id)
     contents.delete(id)
     contents[id.to_s] = contents[id.to_s].to_i - 1
