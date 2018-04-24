@@ -31,8 +31,9 @@ describe "user navigates to shop index" do
       within('#item_2') do
         click_button('Add Item')
       end
-
+      save_and_open_page
       visit cart_index_path
+      expect(page).to have_content("Cart: 2")
     end
   end
 end

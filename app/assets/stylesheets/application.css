@@ -26,6 +26,10 @@ a {
 
 body {
   margin: 0;
+  background-image: url("bicycle-bridge-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .nav-bar-container {
@@ -71,26 +75,18 @@ body {
   align-content: center;
   text-align: center;
   border-top-left-radius: 15px;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
-border-bottom-left-radius:15px;
-background-color: #e2e2e2;
--webkit-box-shadow:0 0 60px white;
--moz-box-shadow: 0 0 60px white;
-box-shadow:0 0 60px white;
-border:3px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius:15px;
+  background-color: #e2e2e2;
+  -webkit-box-shadow:0 0 60px white;
+  -moz-box-shadow: 0 0 60px white;
+  box-shadow:0 0 60px white;
+  border:3px solid black;
 }
 
 .home-page-local-db-sign-in p{
   margin-top: 20%;
-
-}
-
-body {
-   background-image: url("bicycle-bridge-background.jpg");
-     background-repeat: no-repeat;
-       background-attachment: fixed;
-     background-size: cover;
 }
 
 .new-user-form{
@@ -101,60 +97,53 @@ body {
   -webkit-box-shadow:0 0 60px white;
   -moz-box-shadow: 0 0 60px white;
   box-shadow:0 0 60px white;
-border:3px solid black;
-text-align: center;
-border-top-left-radius: 15px;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
-border-bottom-left-radius:15px;
+  border:3px solid black;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius:15px;
+  margin-left: 39%;
+}
 
-
-margin-left: 39%;
-
+.user-login {
+  position: absolute;
+  top: 50px;
+  margin: 10px;
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 19.4%;
-     display: inline-block;
-      margin-right: 20px;
-      background-color: #e5e5e5;
-      margin-top: 20px;
-      -webkit-box-shadow:0 0 20px white;
-      -moz-box-shadow: 0 0 20px white;
-      box-shadow:0 0 20px white;
-      border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius:15px;
-    margin-top: 10%;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    border:3px solid black;
-
-
-
-
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 19.4%;
+  display: inline-block;
+  margin-right: 20px;
+  background-color: #e5e5e5;
+  margin-top: 20px;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius:15px;
+  margin-top: 10%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border:3px solid black;
 }
 
 
 .container {
-    padding: 2px 16px;
-    -webkit-box-shadow:0 0 20px white;
-    -moz-box-shadow: 0 0 20px white;
-    box-shadow:0 0 20px white;
-    border-top-left-radius: 15px;
+  padding: 2px 16px;
+  -webkit-box-shadow:0 0 20px white;
+  -moz-box-shadow: 0 0 20px white;
+  box-shadow:0 0 20px white;
+  border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius:15px;
-
-
-
-
-
-
 }
 
 .user {
@@ -162,11 +151,10 @@ margin-left: 39%;
   color: white;
   margin-right: 2%;
 }
+
 .icon {
   margin-left: 15px;
 }
-
-
 
 .alert-error {
     background-color: #f2dede;
@@ -183,21 +171,18 @@ margin-left: 39%;
  }
 
 .alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
-    text-align: left;
-    display: flex;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+  display: flex;
   height: 70px;
   justify-content: center;
   align-items: center;
   position: absolute;
   left: 0;
   right: 0;
-
  }
-
-
 
 .alert-notice {
     background-color: #dff0d8;
