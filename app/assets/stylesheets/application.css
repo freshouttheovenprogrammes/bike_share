@@ -114,7 +114,7 @@ body {
     top: 16%;
     left: 25%;
     transform: translate(-50%, -50%);
-    background-color: rgb(105, 105, 105, 0.6);
+    background-color: rgba(105, 105, 105, 0.6);
     color: white;
     border-radius: 5px;
     padding: 1.5%;
