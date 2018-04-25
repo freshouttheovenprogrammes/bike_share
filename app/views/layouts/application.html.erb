@@ -21,12 +21,12 @@
           <i class="fa fa-shopping-cart" style="font-size:48px;color:white"></i>
           <% end %>
           <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
-          <p>Cart: <%= @cart.total_count %></p>
           </div>
             <%= link_to "Home", root_path %>
           <%= link_to "Sign Out", signout_path, id: "sign_out" %>
           <%= link_to "Visit Store", items_path, id: "store_link" %>
         <% else %>
+          <p>Cart: <%= @cart.total_count %></p>
           <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
           <%= link_to "Log In", signin_path %>
           <%= link_to "Register New Account", new_users_path %>
