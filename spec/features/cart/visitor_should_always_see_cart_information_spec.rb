@@ -77,7 +77,7 @@ describe "As a visitor" do
         end
         it "the cart total amount increases" do
           category = Category.create!(id: 4, title: "lessons")
-          Item.create!(title: "accessory", description: "hey", price: 300, image: 'mountain_bike.png', status: "active",
+          item = Item.create!(title: "accessory", description: "hey", price: 300, image: 'mountain_bike.png', status: "active",
                       quantity: 2, category: category)
 
           visit lessons_path
@@ -86,7 +86,7 @@ describe "As a visitor" do
 
           visit cart_index_path
 
-          expect(page).to have_content("$300.00")
+          expect(page).to have_content("$#{item.price}.00")
         end
       end
       context "and delete an item from the cart" do

@@ -29,6 +29,10 @@ describe "As a user" do
     fill_in "password", with: app_user.app_credential.password
     click_on("Submit")
 
+    expect(page).to_not have_content("Log In")
+    expect(page).to_not have_content("Sign in with Google")
+    expect(page).to_not have_content("Register New Account")
+
     click_link("Sign Out")
 
     expect(current_path). to eq root_path
