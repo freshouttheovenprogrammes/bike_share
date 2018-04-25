@@ -32,18 +32,24 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: top;
     font-family: "Font-Awesome", sans-serif;
     line-height: 1.7;
     font-size: 16px;
 }
 
+.btn:active {
+  transform: translateY(-1px);
+}
+
 .nav-bar-container {
     overflow: hidden;
     position: fixed;
-    top: 0px;
+    height: 4.8vh;
+    top: 0;
     width: 100%;
     background-color: black;
-    z-index:300;
+    z-index: 300;
 }
 
 .nav-bar-links a {
@@ -77,10 +83,7 @@ body {
     margin-left: 35%;
     align-content: center;
     text-align: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius:15px;
+    border-radius: 15px;
     background-color: #e2e2e2;
     -webkit-box-shadow:0 0 60px white;
     -moz-box-shadow: 0 0 60px white;
@@ -89,7 +92,7 @@ body {
 }
 
 .home-page-local-db-sign-in p{
-    margin-top: 20%;
+    margin-top: 25%;
 }
 
 .new-user-form{
@@ -102,17 +105,20 @@ body {
     box-shadow:0 0 60px white;
     border:3px solid black;
     text-align: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius:15px;
+    border-radius: 15px;
     margin-left: 39%;
 }
 
 .user-login {
     position: absolute;
-    top: 50px;
-    margin: 10px;
+    top: 16%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(105, 105, 105, 0.6);
+    color: white;
+    border-radius: 5px;
+    padding: 1.5%;
+    margin: 2vh;
 }
 
 .card {
