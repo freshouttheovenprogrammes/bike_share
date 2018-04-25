@@ -16,7 +16,7 @@ describe "As a registered user" do
           expect(current_path).to eq signin_path
         end
 
-        xit "and I should see credentials to log in" do
+        it "and I should see credentials to log in" do
 
           visit root_path
 
@@ -27,11 +27,9 @@ describe "As a registered user" do
 
           click_on "Submit"
 
-          expect(current_path).to eq "/dashboard"
+          expect(current_path).to eq "/dashboard/#{app_user.id}"
 
-          within('#nav-container') do
-            expect(page).to have_content "Logged In As #{app_user.username}"
-          end
+          expect(page).to have_content "Welcome back, #{app_user.username}"
         end
       end
     end

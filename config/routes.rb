@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   resources :cart, only: [:create, :index, :destroy]
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+  resources :dashboard, only: [:show]
 
-  resource :users
+  resource :users, except: [:show]
 
 
 
