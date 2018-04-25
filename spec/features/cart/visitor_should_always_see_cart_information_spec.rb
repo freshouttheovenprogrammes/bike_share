@@ -13,7 +13,7 @@ describe "As a visitor" do
         expect(page).to have_content "Cart: 0"
       end
 
-      expect(page).to have_content "Add Item To Cart"
+      expect(page).to have_button "Add Item To Cart"
       end
     end
   end
