@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if app_credential.save && @user.save
       flash[:notice] = "Welcome to BikeShare!"
       session[:user_id] = @user.id
-      redirect_to users_path(@user)
+      redirect_to dashboard_path(@user)
     else
       flash[:error] = "There was an error processing your account!"
       redirect_to root_path

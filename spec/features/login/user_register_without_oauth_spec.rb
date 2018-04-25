@@ -19,8 +19,7 @@ describe "as a user" do
         click_on("Register")
 
         new_user = User.last
-        expect(current_path).to eq users_path(new_user)
-        expect(page).to have_content("Welcome to your profile, Test!")
+        expect(current_path).to eq dashboard_path(new_user)
       end
     end
   end

@@ -32,7 +32,7 @@ describe "As a registered user" do
           expect(page).to have_content "Welcome back, #{app_user.username}"
         end
 
-        it "I should be able to navigate to items page" do
+        it "navbar test" do
           visit root_path
 
           click_link "Log In"
@@ -42,6 +42,10 @@ describe "As a registered user" do
 
           click_on "Submit"
 
+          expect(page).to_not have_link "Log In"
+          expect(page).to_not have_link "Sign in with Google"
+          expect(page).to have_link "Home"
+          expect(page).to have_link "Sign Out"
           expect(page).to have_link "Visit Store"
         end
       end
