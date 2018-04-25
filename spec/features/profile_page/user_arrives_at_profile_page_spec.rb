@@ -31,6 +31,19 @@ describe "As a registered user" do
 
           expect(page).to have_content "Welcome back, #{app_user.username}"
         end
+
+        it "I should be able to navigate to items page" do
+          visit root_path
+
+          click_link "Log In"
+
+          fill_in "username", with: app_user.username
+          fill_in "password", with: app_user.app_credential.password
+
+          click_on "Submit"
+
+          expect(page).to have_link "Visit Store"
+        end
       end
     end
   end
