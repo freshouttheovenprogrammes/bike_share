@@ -75,6 +75,19 @@ describe "As a visitor" do
             expect(page).to have_content "Cart: 1"
           end
         end
+        it "the cart total amount increases" do
+          category = Category.create!(id: 4, title: "lessons")
+          Item.create!(title: "accessory", description: "hey", price: 300, image: 'mountain_bike.png', status: "active",
+                      quantity: 2, category: category)
+
+          visit lessons_path
+
+          click_button "Add Item To Cart"
+
+          visit cart_index_path
+
+          expect(page).to have_content("$300.00")
+        end
       end
       context "and delete an item from the cart" do
         it "the cart amount decreases" do
