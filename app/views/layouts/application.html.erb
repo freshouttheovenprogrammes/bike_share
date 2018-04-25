@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <title>BikeShare</title>
     <%= csrf_meta_tags %>
@@ -13,7 +12,7 @@
 
   <body>
 
-   <div class="nav-bar-container">
+   <div class="nav-bar-container" id=nav-container>
      <div class="nav-bar-links">
        <div class="google-sign-in">
         <% if current_user %>
@@ -22,12 +21,12 @@
           <i class="fa fa-shopping-cart" style="font-size:48px;color:white"></i>
           <% end %>
           <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
-          <p>Cart: <%= @cart.total_count %></p>
           </div>
             <%= link_to "Home", root_path %>
           <%= link_to "Sign Out", signout_path, id: "sign_out" %>
           <%= link_to "Visit Store", items_path, id: "store_link" %>
         <% else %>
+          <p>Cart: <%= @cart.total_count %></p>
           <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
           <%= link_to "Log In", signin_path %>
           <%= link_to "Register New Account", new_users_path %>
@@ -36,9 +35,6 @@
       </div> <!-- google-sign-in -->
     </div> <!-- nav-bar-links -->
   </div> <!-- nav-bar-container -->
-  <div class="background-container">
-
-  </div>  <!-- background-container -->
 
   <% if flash[:notice] -%>
   <div class = "alert alert-success"><%= flash[:notice] %></div>
