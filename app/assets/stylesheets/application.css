@@ -29,7 +29,9 @@ a {
 body {
     margin: 0;
     background-image: url("bicycle-bridge-background.jpg");
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 
 }
 
@@ -40,10 +42,11 @@ body {
 .nav-bar-container {
     overflow: hidden;
     position: fixed;
-    height: 5.8vh;
+    height: 10.8vh;
     top: 0;
     width: 100%;
     background-color: black;
+    z-index: 1;
 
 
 }
@@ -70,6 +73,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
 }
 
 .home-page-local-db-sign-in{
@@ -122,6 +126,30 @@ body {
     transition: 0.3s;
     width: 19.4%;
     display: inline-block;
+    margin-right: 20px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    -webkit-box-shadow:0 0 20px white;
+    -moz-box-shadow: 0 0 20px white;
+    box-shadow:0 0 20px white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius:15px;
+    margin-top: 10%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border:3px solid black;
+}
+
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 19.4%;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
     margin-right: 20px;
     background-color: #e5e5e5;
     margin-top: 20px;
@@ -198,4 +226,9 @@ body {
 
 .cart-index{
     margin-top: 50px;
+}
+
+.links{
+  text-align: left;
+
 }

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resources :dashboard, only: [:show]
+  resources :stations
 
   resource :users, except: [:show]
 
