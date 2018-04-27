@@ -170,6 +170,30 @@ body {
 }
 
 
+.card3 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 19.4%;
+    display: inline-block;
+    margin-right: 20px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    -webkit-box-shadow:0 0 20px white;
+    -moz-box-shadow: 0 0 20px white;
+    box-shadow:0 0 20px white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius:15px;
+    margin-top: 10%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border:3px solid black;
+    margin-left: 3%;
+}
+
+
 .container {
     padding: 2px 16px;
     -webkit-box-shadow:0 0 20px white;
