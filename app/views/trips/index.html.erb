@@ -1,0 +1,12 @@
+<% @trips.each do |trip| %>
+<div class="card3 animated zoomInDown">
+<h4>duration: <%= trip.duration %></h4>
+<h4>start-date: <%= trip.start_date %></h4>
+<h4>start-station-id: <%= trip.start_station_id %></h4>
+<h4>end-date: <%= trip.end_date %></h4>
+<h4>end-station-id: <%= trip.end_station_id %></h4>
+<h4>bike-id: <%= trip.bike_id %></h4>
+<h4>subscription: <%= trip.subscription %></h4>
+<h4>zipcode: <%= trip.zipcode %></h4>
+</div>
+<% end  %>
