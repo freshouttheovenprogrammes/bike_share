@@ -1,3 +1,4 @@
+<%= will_paginate @trips %>
 <% @trips.each do |trip| %>
 <div class="card3 animated zoomInDown">
 <h4>duration: <%= trip.duration %></h4>
@@ -10,3 +11,6 @@
 <h4>zipcode: <%= trip.zipcode %></h4>
 </div>
 <% end  %>
+<div  class="page">
+<h2><%= will_paginate @trips %></h2>
+</div>
