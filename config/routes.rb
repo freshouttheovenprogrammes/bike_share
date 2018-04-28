@@ -19,6 +19,5 @@ Rails.application.routes.draw do
   resource :users
 
 
-
   resources :items
 end
