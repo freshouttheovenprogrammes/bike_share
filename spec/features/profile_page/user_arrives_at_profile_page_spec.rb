@@ -30,6 +30,10 @@ describe "As a registered user" do
           expect(current_path).to eq "/dashboard/#{app_user.id}"
 
           expect(page).to have_content "Welcome back, #{app_user.username}"
+
+          click_link "Home"
+
+          expect(page).to have_content "My Profile"
         end
 
         it "navbar test" do
