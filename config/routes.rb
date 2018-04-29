@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :accessories, only: [:index]
   resources :tools, only: [:index]
   resources :lessons, only: [:index]
-  resources :cart, only: [:create, :index, :destroy]
+  resources :cart, only: [:create, :index, :destroy, :update]
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
   resources :dashboard, only: [:show]

@@ -14,7 +14,6 @@ class Cart
   end
 
   def increase_item(id)
-    require "pry"; binding.pry
   end
 
   def decrease_item(id)

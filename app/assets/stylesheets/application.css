@@ -232,3 +232,11 @@ body {
   text-align: left;
 
 }
+
+.btn-increase {
+  background-image: url(sort-up.png);
+}
+
+.btn-decrease {
+  background-image: url(sort-down.png);
+}
