@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180425193749) do
-=======
-ActiveRecord::Schema.define(version: 20180425190304) do
->>>>>>> ba44058cf8be3a3e44ff4f71efe12e0d87b10074
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,8 +98,6 @@ ActiveRecord::Schema.define(version: 20180425190304) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.integer "role", default: 0
-    t.string "slug"
-    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "app_credentials", "users"

@@ -22,14 +22,14 @@ Item.create(title: "mountain bike", description: "Ready for the toughest hills",
 Item.create(title: "beach cruiser", description: "Ready for the nearest beach", price: 564, image: 'cruiser.png', quantity: 23, category_id: 1)
 
 
-station = CSV.open('db/csv/station.csv', headers: true, header_converters: :symbol)
-station.each do |row|
-  date_split = row[:installation_date].split("/")
-    Station.create(id: row[:id],
-                   name: row[:name],
-                   latitude: row[:latitude].to_f,
-                   longitude: row[:longitude].to_f,
-                   dock_count: row[:dock_count].to_i,
-                   city: row[:city],
-                   installation_date: DateTime.new(date_split[2].to_i, date_split[0].to_i, date_split[1].to_i))
-  end
+# station = CSV.open('db/csv/station.csv', headers: true, header_converters: :symbol)
+# station.each do |row|
+#   date_split = row[:installation_date].split("/")
+#     Station.create(id: row[:id],
+#                    name: row[:name],
+#                    latitude: row[:latitude].to_f,
+#                    longitude: row[:longitude].to_f,
+#                    dock_count: row[:dock_count].to_i,
+#                    city: row[:city],
+#                    installation_date: DateTime.new(date_split[2].to_i, date_split[0].to_i, date_split[1].to_i))
+#   end
