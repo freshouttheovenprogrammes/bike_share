@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :stations
   resources :trips
+  resources :conditions
   resource :users, except: [:show]
 end
