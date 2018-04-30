@@ -3,6 +3,8 @@
     <p> Welcome back, <%= "#{@user.welcome_message}" %></p>
   </div>
 
-  <div class="profile-pic-container">
-    <%= image_tag @user.image, class: "profile-pic" %>
+  <div class="user-container"
+    <div class="profile-pic-container">
+      <%= image_tag @user.image, class: "profile-pic" %>
+    </div>
   </div>

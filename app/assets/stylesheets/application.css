@@ -279,6 +279,12 @@ body {
     color: white;
 }
 
+.user-container {
+    display: block;
+    padding-left: 3%;
+    background-color: white;
+}
+
 .profile-pic-container {
     position: absolute;
     top: 120px;
