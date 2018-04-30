@@ -6,18 +6,19 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  resources :categories, only: [:index]
-  resources :bikes, only: [:index]
+  patch "/increase", to: 'cart#increase'
+  patch "/decrease", to: 'cart#decrease'
   resources :accessories, only: [:index]
-  resources :tools, only: [:index]
-  resources :lessons, only: [:index]
+  resources :bikes, only: [:index]
+  resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
-  resources :sessions, only: [:create, :destroy]
+  resources :dashboard, only: [:show]
   resource :home, only: [:show]
+  resources :items
+  resources :lessons, only: [:index]
+  resources :tools, only: [:index]
+  resources :sessions, only: [:create, :destroy]
   resources :stations
   resources :trips
-  resource :users
-
-
-  resources :items
+  resource :users, except: [:show]
 end

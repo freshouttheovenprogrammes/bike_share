@@ -9,9 +9,11 @@
         <h1><%= Item.find(key).title  %></h1><br>
         <h3><%= Item.find(key).description %></h3>
         <h3>$<%= Item.find(key).price%>.00</h3>
-        <h3><%= button_to "Add Item", method: :post %></h3>
-      <%= button_to "Delete Item From Cart", cart_path(key), method: :delete %>
-
+        <%= button_to "Add Item", method: :post %>
+        <%= button_to "Delete Item From Cart", cart_path(key), method: :delete %>
+        <%= link_to image_tag("sort-up.png"), increase_path(item_id: key), method: :patch %>
+        <%= link_to image_tag("sort-down.png"), decrease_path(item_id: key), method: :patch %>
+        <%# binding.pry %>
       </div>
 
   </div>

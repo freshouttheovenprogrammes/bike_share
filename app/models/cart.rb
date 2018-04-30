@@ -13,16 +13,17 @@ class Cart
     contents[id.to_s] = contents[id.to_s].to_i + 1
   end
 
-  def increase_item(id)
-    require "pry"; binding.pry
-  end
-
-  def decrease_item(id)
-  end
-
   def remove_item(id)
     contents.delete(id)
     contents[id.to_s] = contents[id.to_s].to_i - 1
+  end
+
+  def increase_item(item)
+    contents[item.id.to_s] += 1
+  end
+
+  def decrease_item(item)
+    contents[item.id.to_s] -= 1
   end
 
   def count_of(id)
@@ -30,8 +31,9 @@ class Cart
   end
 
   def total_sum
-    contents.keys.reduce(0) do |memo, item_id|
-      memo += Item.where(id: item_id).first.price
+    @contents.sum do |item, quantity|
+      item = Item.find(item.to_i)
+      item.price * quantity
     end
   end
 

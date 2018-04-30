@@ -256,16 +256,21 @@ body {
 }
 
 .links{
-  text-align: left;
+    text-align: left;
 
 }
 
+.btn-increase {
+    background-image: url(sort-up.png);
+}
+
+.btn-decrease {
+    background-image: url(sort-down.png);
+}
 
 .page{
-  margin-left: 30%;
-
+    margin-left: 30%;
 }
-
 
 div.page a:link { color: #FFFFFF; }
 div.page a:visited { color: #C5C5C5; }

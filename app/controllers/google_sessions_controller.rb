@@ -3,6 +3,6 @@ class GoogleSessionsController < ApplicationController
    user = User.update_or_create(request.env["omniauth.auth"])
    session[:user_id] = user.id
    flash[:notice] = "Welcome, #{user.first_name}"
-   redirect_to users_path(user)
+   redirect_to dashboard_path(user)
   end
 end

@@ -18,6 +18,7 @@
         <% if current_user %>
         <div class="user">
           <%= link_to cart_index_path do %>
+          <%= link_to "My Profile", dashboard_path(current_user.id) %>
           <i class="fa fa-shopping-cart" style="font-size:48px;color:white"></i>
           <% end %>
           <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>

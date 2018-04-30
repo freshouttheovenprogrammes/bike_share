@@ -16,7 +16,7 @@ describe "As a registered user" do
           expect(current_path).to eq signin_path
         end
 
-        xit "and I should see credentials to log in" do
+        it "and I should see credentials to log in" do
 
           visit root_path
 
@@ -27,11 +27,30 @@ describe "As a registered user" do
 
           click_on "Submit"
 
-          expect(current_path).to eq "/dashboard"
+          expect(current_path).to eq "/dashboard/#{app_user.id}"
 
-          within('#nav-container') do
-            expect(page).to have_content "Logged In As #{app_user.username}"
-          end
+          expect(page).to have_content "Welcome back, #{app_user.username}"
+
+          click_link "Home"
+
+          expect(page).to have_content "My Profile"
+        end
+
+        it "navbar test" do
+          visit root_path
+
+          click_link "Log In"
+
+          fill_in "username", with: app_user.username
+          fill_in "password", with: app_user.app_credential.password
+
+          click_on "Submit"
+
+          expect(page).to_not have_link "Log In"
+          expect(page).to_not have_link "Sign in with Google"
+          expect(page).to have_link "Home"
+          expect(page).to have_link "Sign Out"
+          expect(page).to have_link "Visit Store"
         end
       end
     end

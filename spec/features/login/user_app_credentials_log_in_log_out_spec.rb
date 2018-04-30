@@ -14,8 +14,7 @@ describe "As a user" do
     fill_in "password", with: app_user.app_credential.password
     click_on("Submit")
 
-    expect(current_path).to eq users_path(app_user)
-    expect(page).to have_content "Welcome to your profile, #{app_user.first_name}!"
+    expect(current_path).to eq dashboard_path(app_user)
   end
 
   it "I can log out after signing in" do

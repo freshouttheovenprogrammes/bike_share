@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates_with CredentialValidator
   has_one :app_credential, dependent: :destroy
   has_one :google_credential, dependent: :destroy
+  before_create :assign_image
 
   enum role: %w(default admin)
 
@@ -25,5 +26,9 @@ class User < ApplicationRecord
       user.save!
       google_cred.save!
       user
+  end
+
+  def assign_image
+    self.image = "stock-person.jpg" if image.nil?
   end
 end
