@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427170051) do
+ActiveRecord::Schema.define(version: 20180430202136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,33 @@ ActiveRecord::Schema.define(version: 20180427170051) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.datetime "date"
+    t.float "max_temp"
+    t.float "mean_temp"
+    t.float "min_temp"
+    t.float "max_dewpoint"
+    t.float "mean_dewpoint"
+    t.float "min_dewpoint"
+    t.float "max_humidity"
+    t.float "mean_humidity"
+    t.float "min_humidity"
+    t.float "max_sea_level_pressure_inches"
+    t.float "mean_sea_level_pressure_inches"
+    t.float "min_sea_level_pressure_inches"
+    t.float "max_visibility_miles"
+    t.float "mean_visibility_miles"
+    t.float "min_visibility_miles"
+    t.float "max_wind_speed"
+    t.float "mean_wind_speed"
+    t.float "max_gust_speed"
+    t.float "precipitation_inches"
+    t.float "cloud_cover"
+    t.float "events"
+    t.float "wind_dir_degrees"
+    t.integer "zipcode"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
