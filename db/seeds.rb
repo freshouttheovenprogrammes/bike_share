@@ -22,14 +22,28 @@ Item.create(title: "mountain bike", description: "Ready for the toughest hills",
 Item.create(title: "beach cruiser", description: "Ready for the nearest beach", price: 564, image: 'cruiser.png', quantity: 23, category_id: 1)
 
 
-# station = CSV.open('db/csv/station.csv', headers: true, header_converters: :symbol)
-# station.each do |row|
-#   date_split = row[:installation_date].split("/")
-#     Station.create(id: row[:id],
-#                    name: row[:name],
-#                    latitude: row[:latitude].to_f,
-#                    longitude: row[:longitude].to_f,
-#                    dock_count: row[:dock_count].to_i,
-#                    city: row[:city],
-#                    installation_date: DateTime.new(date_split[2].to_i, date_split[0].to_i, date_split[1].to_i))
-#   end
+station = CSV.open('db/csv/station.csv', headers: true, header_converters: :symbol)
+station.each do |row|
+  date_split = row[:installation_date].split("/")
+    Station.create(id: row[:id],
+                   name: row[:name],
+                   latitude: row[:latitude].to_f,
+                   longitude: row[:longitude].to_f,
+                   dock_count: row[:dock_count].to_i,
+                   city: row[:city],
+                   installation_date: DateTime.new(date_split[2].to_i, date_split[0].to_i, date_split[1].to_i))
+  end
+
+  trips = CSV.open('db/csv/trip.csv', headers: true, header_converters: :symbol)
+  trips.each do |row|
+    start_date_split = row[:start_date].split[0].split("/")
+    end_date_split = row[:end_date].split[0].split("/")
+    Trip.create(duration: row[:duration].to_i,
+                start_date: DateTime.new(start_date_split[2].to_i, start_date_split[0].to_i, start_date_split[1].to_i),
+                start_station_id: row[:start_station_id].to_i,
+                end_date: DateTime.new(end_date_split[2].to_i, end_date_split[0].to_i, end_date_split[1].to_i),
+                end_station_id: row[:end_station_id].to_i,
+                bike_id: row[:bike_id].to_i,
+                subscription: row[:subscription_type],
+                zipcode: row[:zip_code].to_i)
+  end

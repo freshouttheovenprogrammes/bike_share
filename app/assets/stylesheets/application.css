@@ -123,6 +123,7 @@ body {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      vertical-align: top;
     transition: 0.3s;
     width: 19.4%;
     display: inline-block;
@@ -147,7 +148,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 19.4%;
-    height: 100px;
+    height: 250px;
     display: inline-block;
     vertical-align: top;
     margin-right: 20px;
@@ -165,6 +166,32 @@ body {
     justify-content: center;
     text-align: center;
     border:3px solid black;
+    margin-left: 40%;
+    margin-top: 25%;
+}
+
+
+.card3 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 19.4%;
+    display: inline-block;
+    margin-right: 20px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    -webkit-box-shadow:0 0 20px white;
+    -moz-box-shadow: 0 0 20px white;
+    box-shadow:0 0 20px white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius:15px;
+    margin-top: 10%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    border:3px solid black;
+    margin-left: 3%;
 }
 
 
@@ -229,14 +256,23 @@ body {
 }
 
 .links{
-  text-align: left;
+    text-align: left;
 
 }
 
 .btn-increase {
-  background-image: url(sort-up.png);
+    background-image: url(sort-up.png);
 }
 
 .btn-decrease {
-  background-image: url(sort-down.png);
+    background-image: url(sort-down.png);
 }
+
+.page{
+    margin-left: 30%;
+}
+
+div.page a:link { color: #FFFFFF; }
+div.page a:visited { color: #C5C5C5; }
+div.page a:hover { color: #6F6F6F; }
+div.page a:active { color: #262626; }

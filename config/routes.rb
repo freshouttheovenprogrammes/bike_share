@@ -8,20 +8,17 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   patch "/increase", to: 'cart#increase'
   patch "/decrease", to: 'cart#decrease'
-  resources :categories, only: [:index]
-  resources :bikes, only: [:index]
   resources :accessories, only: [:index]
-  resources :tools, only: [:index]
-  resources :lessons, only: [:index]
+  resources :bikes, only: [:index]
+  resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
-  resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
   resources :dashboard, only: [:show]
-  resources :stations
-
-  resource :users, except: [:show]
-
-
-
+  resource :home, only: [:show]
   resources :items
+  resources :lessons, only: [:index]
+  resources :tools, only: [:index]
+  resources :sessions, only: [:create, :destroy]
+  resources :stations
+  resources :trips
+  resource :users, except: [:show]
 end
