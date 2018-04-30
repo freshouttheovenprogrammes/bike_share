@@ -1,12 +1,8 @@
 
-<div class="welcome-container">
-  <p> Welcome back, <%= if !@user.username.nil?
-                          "#{@user.username}"
-                        else
-                          "#{@user.first_name} #{@user.last_name}"
-                        end %></p>
-</div>
+  <div class="welcome-container">
+    <p> Welcome back, <%= "#{@user.welcome_message}" %></p>
+  </div>
 
-<div class="profile-pic-container">
-  <%= image_tag @user.image, class: "profile-pic" %>
-</div>
+  <div class="profile-pic-container">
+    <%= image_tag @user.image, class: "profile-pic" %>
+  </div>
