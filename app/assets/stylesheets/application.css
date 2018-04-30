@@ -257,7 +257,6 @@ body {
 
 .links{
     text-align: left;
-
 }
 
 .btn-increase {
@@ -270,6 +269,25 @@ body {
 
 .page{
     margin-left: 30%;
+}
+
+.welcome-container {
+    position: absolute;
+    top: 150px;
+}
+
+.profile-pic-container {
+    position: absolute;
+    top: 120px;
+    right: 30%;
+}
+
+.profile-pic {
+    float: right;
+    border-radius: 50%;
+    height: auto;
+    max-block-size: 250px;
+    position: inherit;
 }
 
 div.page a:link { color: #FFFFFF; }
