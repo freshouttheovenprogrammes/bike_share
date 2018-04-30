@@ -11,8 +11,9 @@
         <h3>$<%= Item.find(key).price%>.00</h3>
         <%= button_to "Add Item", method: :post %>
         <%= button_to "Delete Item From Cart", cart_path(key), method: :delete %>
-        <%= link_to image_tag("sort-up.png"), @cart.increase_item(@item) %>
-        <%= link_to image_tag("sort-down.png"), @cart.decrease_item(@item) %>
+        <%= link_to image_tag("sort-up.png"), increase_path(item_id: key), method: :patch %>
+        <%= link_to image_tag("sort-down.png"), decrease_path(item_id: key), method: :patch %>
+        <%# binding.pry %>
       </div>
 
   </div>
