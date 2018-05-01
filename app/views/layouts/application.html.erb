@@ -3,46 +3,48 @@
   <head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Monsterrat:100,300,400,700,900" rel="stylesheet">
     <title>BikeShare</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'images/favicon.png' %>
   </head>
-
   <body>
 
-   <div class="nav-bar-container" id=nav-container>
-     <div class="nav-bar-links">
-       <div class="google-sign-in">
+    <div class="nav-bar-container" id=nav-container>
+
+    <div class="nav-bar-container-left">
+      <div class="nav-bar-links">
         <% if current_user %>
-        <div class="user">
-          <%= link_to cart_index_path do %>
+          <%= link_to "Home", root_path %>
           <%= link_to "My Profile", dashboard_path(current_user.id) %>
-          <i class="fa fa-shopping-cart" style="font-size:48px;color:white"></i>
-          <% end %>
-          <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
-          </div>
-            <%= link_to "Home", root_path %>
-          <%= link_to "Sign Out", signout_path, id: "sign_out" %>
           <%= link_to "Visit Store", items_path, id: "store_link" %>
+          <%= link_to "Sign Out", signout_path, id: "sign_out" %>
         <% else %>
-          <p>Cart: <%= @cart.total_count %></p>
           <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
           <%= link_to "Log In", signin_path %>
           <%= link_to "Register New Account", new_users_path %>
+          <%= link_to "Visit Store", items_path, id: "store_link" %>
         <% end %>
+      </div>
+    </div>
 
-      </div> <!-- google-sign-in -->
-    </div> <!-- nav-bar-links -->
-  </div> <!-- nav-bar-container -->
+    <div class="nav-bar-container-right">
+      <div class="nav-bar-cart-information">
+        <%= link_to cart_index_path do %>
+        <i class="fa fa-shopping-cart" style="font-size:35px;color:white">(<%= @cart.total_count %>)</p></i>
+        <% end %>
+        <p>Signed in as <strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong>!<p>
+      </div>
+    </div>
+  </div>
 
-  <% if flash[:notice] -%>
-  <div class = "alert alert-success"><%= flash[:notice] %></div>
-  <% end %>
+    <% if flash[:notice] -%>
+      <div class = "alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+
     <%= yield %>
-
-
 
   </body>
   </html>

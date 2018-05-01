@@ -27,6 +27,7 @@ html {
 }
 
 a {
+  font-family: "Monsterrat", sans-serif;
   text-decoration: none;
 }
 
@@ -46,19 +47,49 @@ body {
 .nav-bar-container {
     overflow: hidden;
     position: fixed;
-    height: 10.8vh;
+    height: 7.8vh;
     top: 0;
     width: 100%;
     background-color: black;
     z-index: 1;
 }
 
+.fa-shopping-cart {
+    padding: 13px;
+    float: right;
+    margin-right: 10px;
+}
+
+.nav-bar-container-left, .nav-bar-container-right {
+    height: 100%;
+    width: 50%;
+}
+
+.nav-bar-container-left {
+    float: left;
+}
+
+.nav-bar-container-right {
+    float: right;
+    height: 100%;
+}
+
+.nav-bar-cart-information {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.nav-bar-links {
+    height: 100%;
+    display: flex;
+}
+
 .nav-bar-links a {
-    float: center;
     color: #f2f2f2;
     text-align: right;
     padding: 14px 16px;
-    font-size: 17px;
+    font-size: 25px;
 }
 
 .nav-bar-links a:hover {
