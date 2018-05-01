@@ -22,6 +22,10 @@
     box-sizing: inherit;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
 }
@@ -47,8 +51,6 @@ body {
     width: 100%;
     background-color: black;
     z-index: 1;
-
-
 }
 
 .nav-bar-links a {
@@ -271,21 +273,32 @@ body {
     margin-left: 30%;
 }
 
-.welcome-container {
-    position: absolute;
-    top: 20%;
-    left: 3%;
-    font-size: xx-large;
-    color: white;
+.db-left-side {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: blue;
 }
 
-.user-container {
+.db-right-side {
+  height: 100%;
+  width: 50%;
+  float: right;
+  background-color: orange;
+}
+
+.db-user-container {
     display: block;
     padding-left: 3%;
     background-color: white;
+    max-width: 31%;
+    float: right;
+    padding-top: 14%;
+    margin-top: 16%;
+    margin-right: 27px;
 }
 
-.profile-pic-container {
+.db-profile-pic-container {
     position: absolute;
     top: 120px;
     right: 30%;
