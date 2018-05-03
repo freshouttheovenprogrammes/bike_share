@@ -7,7 +7,7 @@ describe Order, type: :model do
   end
 
   describe "relationships" do
-    it {should have_many :items}
+    it {should have_many(:items).through(:order_items)}
     it {should belong_to :user}
   end
 end

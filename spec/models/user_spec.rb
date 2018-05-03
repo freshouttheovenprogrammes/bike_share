@@ -30,6 +30,7 @@ describe User, type: :model do
   context "relationships"
     it {should have_one(:app_credential)}
     it {should have_one(:google_credential)}
+    it {should have_many(:orders)}
     it {should validate_presence_of :email}
     it {should validate_presence_of :first_name}
     it {should validate_presence_of :last_name}
