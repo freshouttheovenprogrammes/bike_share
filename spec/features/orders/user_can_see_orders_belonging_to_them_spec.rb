@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "As an authenticated user" do
 
   let(:app_user) { FactoryBot.create(:app_user) }
-
+  let(:order) { FactoryBot.create(:order_ordered) }
   context "when I visit /orders" do
 
     before(:each) do
@@ -15,15 +15,15 @@ describe "As an authenticated user" do
       click_on "Submit"
 
       expect(current_path).to eq dashboard_path(app_user)
-
-      Order.create!(total: 666, status: "ordered", user: app_user)
     end
 
    it "I should see all orders belonging to me" do
 
      visit order_path(app_user)
 
-
+     expect(page).to have_content "#{order.status}"
+     expect(page).to have_content "#{order.total}"
+     expect(page).to have_link "View Order"
     end
   end
 end

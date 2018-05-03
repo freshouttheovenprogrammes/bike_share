@@ -31,7 +31,6 @@ FactoryBot.define do
     sequence role: "admin"
     before(:create) do |user|
       user.create_app_credential(password: "test123")
-
     end
   end
 end

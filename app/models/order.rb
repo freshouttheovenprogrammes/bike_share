@@ -3,5 +3,5 @@ class Order < ApplicationRecord
   has_many :order_items
   has_many :items, through: :order_items
   belongs_to :user
-  enum status: %w(ordered paid cancelled completed)
+  enum status: %w(Ordered Paid Cancelled Completed)
 end
