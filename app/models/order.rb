@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :order_items
   has_many :items, through: :order_items
   belongs_to :user
-  enum status: [:ordered, :paid, :cancelled, :completed]
+  enum status: [:Ordered, :Paid, :Cancelled, :Completed]
 
   def user_order(user)
     Order.select('user.id').where(user.order).map
