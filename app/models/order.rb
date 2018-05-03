@@ -9,7 +9,7 @@ class Order < ApplicationRecord
     Order.select('user.id').where(user.order).map
   end
 
-  def self.user_all_orders(user)
-    user.orders
+  def assign_order(user)
+    user.orders << self
   end
 end

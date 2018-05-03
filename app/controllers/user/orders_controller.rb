@@ -1,13 +1,12 @@
 class User::OrdersController < ApplicationController
   before_action :set_user
 
-
   def show
     @order = Order.user_order(@user)
   end
 
   def index
-    @orders = Order.user_all_orders(@user)
+    @orders = current_user.orders
   end
 
   private
