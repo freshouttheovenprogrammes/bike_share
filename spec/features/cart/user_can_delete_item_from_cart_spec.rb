@@ -33,7 +33,7 @@ describe "user navigates to shop index" do
       end
 
       visit cart_index_path
-      expect(page).to have_content("Cart: 2")
+      expect(page).to have_content("(2)")
     end
   end
 end

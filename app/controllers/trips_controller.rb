@@ -4,6 +4,10 @@ class TripsController < ApplicationController
     @trips = Trip.all.paginate(page: params[:page], per_page: 8)
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+  end 
+
 
 
 
