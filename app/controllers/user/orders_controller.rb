@@ -1,5 +1,11 @@
 class User::OrdersController < ApplicationController
-  # before_action :set_user, only: [:show]
+  # before_action :set_user, only: [:create]
+
+  def create
+    # require "pry"; binding.pry
+    @user = User.find(params[:format])
+    @order.assign_order(@user)
+  end
 
   def show
     @order = Order.find(params[:id])
@@ -16,4 +22,7 @@ class User::OrdersController < ApplicationController
     @user = User.find(params[:format])
   end
 
+  def order_params
+    params(:order).permit(:total, :status, :user_id)
+  end
 end

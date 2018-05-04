@@ -18,4 +18,5 @@
   </div>
 <% end %>
 <h3>Sum Of All Items: <%= @cart.total_sum %></h3>
+<%= button_to "Checkout", user_orders_path(@user) %>
 </div>

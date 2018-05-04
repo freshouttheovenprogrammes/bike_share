@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   resources :conditions
   resource :users, except: [:show]
   namespace :user do
-    resources :orders
+    resources :orders, except: [:new]
   end
 end
