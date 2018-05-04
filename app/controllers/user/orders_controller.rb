@@ -1,7 +1,12 @@
 class User::OrdersController < ApplicationController
   def create
-    @order.assign_order(@user)
-  end
+    user = User.find(session[:user_id])
+    @order = user.orders.create(total: @cart.total_sum, status: "Ordered")
+    session[:cart].map do |accessory_id, quantity|
+      @order.order_items.create(item_id: accessory_id.to_i,
+                                      order_id: @order.id)
+     end
+    end
 
   def show
     @order = Order.find(params[:id])
