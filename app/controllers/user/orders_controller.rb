@@ -1,6 +1,5 @@
 class User::OrdersController < ApplicationController
   def create
-    require "pry"; binding.pry
     @order.assign_order(@user)
   end
 
