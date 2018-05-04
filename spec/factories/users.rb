@@ -1,3 +1,5 @@
+
+
 FactoryBot.define do
   factory :app_user, class: User do
     sequence :username { |n| "username#{n}" }
