@@ -4,7 +4,7 @@ class CartController < ApplicationController
   before_action :set_item_id, only: [:create, :increase, :decrease]
 
   def index
-
+    @user = current_user
   end
 
   def create
