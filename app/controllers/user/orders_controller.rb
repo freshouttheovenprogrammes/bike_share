@@ -1,12 +1,13 @@
 class User::OrdersController < ApplicationController
-  before_action :set_user
+  # before_action :set_user, only: [:show]
 
   def show
-    @order = Order.user_order(@user)
+    @order = Order.find(params[:id])
   end
 
   def index
-    @orders = current_user.orders
+    @user = User.find(params[:format])
+    @orders = @user.orders
   end
 
   private

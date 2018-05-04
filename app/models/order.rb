@@ -5,10 +5,6 @@ class Order < ApplicationRecord
   belongs_to :user
   enum status: [:Ordered, :Paid, :Cancelled, :Completed]
 
-  def user_order(user)
-    Order.select('user.id').where(user.order).map
-  end
-
   def assign_order(user)
     user.orders << self
   end

@@ -3,5 +3,5 @@
   <% @orders.each do |order| %>
     <%= order.status %>
     <%= order.total %>
-    <%= link_to  "View Order", user_orders_path(@user, @order) %>
+    <%= link_to  "View Order", user_order_path(@user, @order) %>
   <% end %>
