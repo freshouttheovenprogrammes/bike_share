@@ -5,7 +5,11 @@ class User::OrdersController < ApplicationController
     session[:cart].map do |accessory_id, quantity|
       @order.order_items.create(item_id: accessory_id.to_i,
                                       order_id: @order.id)
+
      end
+     flash.notice = "You have successfully submitted your order."
+      session[:cart] = Hash.new(0)
+      redirect_to user_orders_path
     end
 
   def show
@@ -13,7 +17,7 @@ class User::OrdersController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:format])
+    @user = User.find(session[:user_id])
     @orders = @user.orders
   end
 
