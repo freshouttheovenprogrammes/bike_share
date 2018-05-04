@@ -10,7 +10,7 @@ describe "As a visitor" do
       visit bikes_path
 
       within("#nav-container") do
-        expect(page).to have_content "Cart: 0"
+        expect(page).to have_content "(0)"
       end
 
       expect(page).to have_button "Add Item To Cart"
@@ -23,7 +23,7 @@ describe "As a visitor" do
         visit accessories_path
 
         within("#nav-container") do
-          expect(page).to have_content "Cart: 0"
+          expect(page).to have_content "(0)"
         end
 
         expect(page).to have_button "Add Item To Cart"
@@ -36,7 +36,7 @@ describe "As a visitor" do
         visit tools_path
 
         within("#nav-container") do
-          expect(page).to have_content "Cart: 0"
+          expect(page).to have_content "(0)"
         end
 
         expect(page).to have_button "Add Item To Cart"
@@ -49,7 +49,7 @@ describe "As a visitor" do
         visit lessons_path
 
         within("#nav-container") do
-          expect(page).to have_content "Cart: 0"
+          expect(page).to have_content "(0)"
         end
 
         expect(page).to have_button "Add Item To Cart"
@@ -58,7 +58,7 @@ describe "As a visitor" do
 
         visit root_path
         within("#nav-container") do
-          expect(page).to have_content "Cart: 0"
+          expect(page).to have_content "(0)"
         end
       end
       context "and add an item to the cart" do
@@ -72,7 +72,7 @@ describe "As a visitor" do
           click_button "Add Item To Cart"
 
           within("#nav-container") do
-            expect(page).to have_content "Cart: 1"
+            expect(page).to have_content "(1)"
           end
         end
         it "the cart total amount increases" do
@@ -104,7 +104,7 @@ describe "As a visitor" do
           click_button "Delete Item From Cart"
 
           within("#nav-container") do
-            expect(page).to have_content "Cart: 0"
+            expect(page).to have_content "(0)"
           end
         end
       end

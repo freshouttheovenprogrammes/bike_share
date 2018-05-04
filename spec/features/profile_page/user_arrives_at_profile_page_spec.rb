@@ -28,8 +28,7 @@ describe "As a registered user" do
           click_on "Submit"
 
           expect(current_path).to eq "/dashboard/#{app_user.id}"
-
-          expect(page).to have_content "Welcome back, #{app_user.username}"
+          expect(page).to have_content "#{app_user.username}"
 
           click_link "Home"
 

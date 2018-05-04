@@ -1,4 +1,29 @@
+  <div class="db-page">
+    
+    <div class="db-left-side">
 
-  <p> Welcome back, <%= "#{@user.username}" %></p>
+      <div class="db-welcome-message">
 
-  <%= image_tag @user.image, class: "profile-pic" %>
+      </div>
+
+      <div class="db-about-us">
+
+      </div>
+
+    </div>
+
+    <div class="db-right-side">
+
+      <div class="db-user-container">
+        <div class="db-profile-pic-container">
+          <%= image_tag @user.image, class: "profile-pic" %>
+        </div>
+
+        <div class="name-container">
+          <%= "#{@user.set_username}" %></p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

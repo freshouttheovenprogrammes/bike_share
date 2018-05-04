@@ -31,4 +31,12 @@ class User < ApplicationRecord
   def assign_image
     self.image = "stock-person.jpg" if image.nil?
   end
+
+  def set_username
+    if self.username.nil?
+      "#{self.first_name} #{self.last_name}"
+    else
+      "#{self.username}"
+    end
+  end
 end
