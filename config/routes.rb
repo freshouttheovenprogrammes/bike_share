@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   resources :trips
   resources :conditions
   resource :users, except: [:show]
+  namespace :user do
+    resources :orders, except: [:new]
+  end
 end
