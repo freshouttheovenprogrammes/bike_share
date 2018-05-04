@@ -1,6 +1,4 @@
 class User::OrdersController < ApplicationController
-  # before_action :set_user, only: [:create]
-
   def create
     require "pry"; binding.pry
     @order.assign_order(@user)
