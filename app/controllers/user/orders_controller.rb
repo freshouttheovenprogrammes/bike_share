@@ -10,7 +10,7 @@ class User::OrdersController < ApplicationController
      flash.notice = "You have successfully submitted your order."
       session[:cart] = Hash.new(0)
       redirect_to user_orders_path
-    end
+  end
 
   def show
     @order = Order.find(params[:id])
