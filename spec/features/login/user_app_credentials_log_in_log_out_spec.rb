@@ -14,7 +14,7 @@ describe "As a user" do
     fill_in "password", with: app_user.app_credential.password
     click_on("Submit")
 
-    expect(current_path).to eq dashboard_path(app_user)
+    expect(current_path).to eq dashboard_path
   end
 
   it "I can log out after signing in" do
