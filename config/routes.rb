@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
-  # resources :dashboard, only: [:show]
-  # resource :dashboard, only: [:show], to: 'users#dashboard'
   get '/dashboard', to: 'users#dashboard'
   resource :home, only: [:show]
   resources :items
