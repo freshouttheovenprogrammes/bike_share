@@ -18,7 +18,7 @@
       <div class="nav-bar-links">
         <% if current_user %>
           <%= link_to "Home", root_path %>
-          <%= link_to "My Profile", dashboard_path(current_user.id) %>
+          <%= link_to "My Profile", dashboard_path %>
           <%= link_to "Visit Store", items_path, id: "store_link" %>
           <%= link_to "Sign Out", signout_path, id: "sign_out" %>
         <% else %>
