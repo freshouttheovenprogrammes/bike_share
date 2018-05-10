@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
-
-  before_action :set_cart
   protect_from_forgery with: :exception
+  before_action :set_cart
   helper_method :current_user
   helper_method :current_admin?
+  
+  def set_cart
+    @cart ||= Cart.new(session[:cart])
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -12,9 +15,4 @@ class ApplicationController < ActionController::Base
   def current_admin?
     current_user && current_user.admin?
   end
-
-  def set_cart
-    @cart ||= Cart.new(session[:cart])
-  end
-
 end
