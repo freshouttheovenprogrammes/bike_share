@@ -19,7 +19,7 @@ describe "as a user" do
         click_on("Register")
 
         new_user = User.last
-        expect(current_path).to eq dashboard_path(new_user)
+        expect(current_path).to eq dashboard_path
       end
     end
   end

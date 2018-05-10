@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.app_credential.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to dashboard_path(user)
+      redirect_to "/dashboard"
     else
       flash[:error] = "Could not validate credentials"
       redirect_to root_path

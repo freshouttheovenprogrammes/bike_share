@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:dashboard]
+
   def new
     @user = User.new
   end
@@ -9,11 +11,14 @@ class UsersController < ApplicationController
     if app_credential.save && @user.save
       flash[:notice] = "Welcome to BikeShare!"
       session[:user_id] = @user.id
-      redirect_to dashboard_path(@user)
+      redirect_to "/dashboard"
     else
       flash[:error] = "There was an error processing your account!"
-      redirect_to root_path
+      redirect_to new_user_path
     end
+  end
+
+  def dashboard
   end
 
   private
@@ -24,5 +29,9 @@ class UsersController < ApplicationController
 
   def credential_params
     params[:user].permit(:password)
+  end
+
+  def set_user
+    @user = current_user
   end
 end

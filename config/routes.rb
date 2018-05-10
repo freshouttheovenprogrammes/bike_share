@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
-  resources :dashboard, only: [:show]
+  get '/dashboard', to: 'users#dashboard'
   resource :home, only: [:show]
   resources :items
   resources :lessons, only: [:index]
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :stations
   resources :trips
   resources :conditions
-  resource :users, except: [:show]
+  resources :users, except: [:show]
   namespace :user do
     resources :orders, except: [:new]
   end

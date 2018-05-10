@@ -28,10 +28,10 @@ describe "As a registered user" do
 
       click_on "Checkout"
 
-      expect(current_path).to eq user_orders_path(user)
+      expect(current_path).to eq user_orders_path
 
-      expect(Cart.contents).to eq 1
-      expect(Cart.last.status).to eq "Completed"
+      expect(page).to have_content "500"
+      expect(page).to have_content "Ordered"
     end
   end
 end
