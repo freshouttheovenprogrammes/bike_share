@@ -1,0 +1,325 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ *,
+ *:before,
+ *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+a {
+    font-family: "Monsterrat", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("bicycle-bridge-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.nav-bar-container {
+    overflow: hidden;
+    position: fixed;
+    height: 7.8vh;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+}
+
+.fa-shopping-cart {
+    padding: 13px;
+    float: right;
+    margin-right: 10px;
+}
+
+.nav-bar-container-left, .nav-bar-container-right {
+    height: 100%;
+    width: 50%;
+}
+
+.nav-bar-container-left {
+    float: left;
+}
+
+.nav-bar-container-right {
+    float: right;
+    height: 100%;
+}
+
+.nav-bar-cart-information {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.nav-bar-links {
+    height: 100%;
+    display: flex;
+}
+
+.nav-bar-links a {
+    color: #f2f2f2;
+    text-align: right;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.nav-bar-links a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.background-img {
+    background: url("/bicycle-bridge-background.jpg") no-repeat center center fixed;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.home-page-local-db-sign-in{
+    width: 30%;
+    height: 200px;
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #e2e2e2;
+    box-shadow:0 0 60px white;
+    border:3px solid black;
+    transform: translate(100%, 100%);
+    font-size: 25px;
+}
+
+.home-page-local-db-sign-in p{
+    margin-top: 25%;
+}
+
+.new-user-form{
+    margin-top: 15%;
+    width: 20%;
+    height: 300px;
+    background-color: #e2e2e2;
+    box-shadow:0 0 60px white;
+    border:3px solid black;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 39%;
+}
+
+.user-login {
+    position: absolute;
+    top: 16%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(105, 105, 105, 0.6);
+    color: white;
+    border-radius: 5px;
+    padding: 1.5%;
+    margin: 2vh;
+}
+
+.item-cards-container {
+
+}
+
+.card {
+    background-color: #e5e5e5;
+    box-shadow:0 0 20px white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border:3px solid black;
+    border-radius: 15px;
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-top: 10%;
+    margin-right: 20px;
+    text-align: center;
+    transition: 0.3s;
+    vertical-align: top;
+    width: 19.4%;
+}
+
+.card2 {
+    display: inline-block;
+    background-color: #e5e5e5;
+    border:3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: 10%;
+    margin-top: 25%;
+    margin-left: 40%;
+    margin-right: 20px;
+    height: 250px;
+    vertical-align: top;
+    box-shadow:0 0 20px white;
+    border-radius: 15px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+    width: 19.4%;
+}
+
+
+.card3 {
+    display: inline-block;
+    background-color: #e5e5e5;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow:0 0 20px white;
+    border:3px solid black;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-top: 20px;
+    margin-left: 3%;
+    margin-right: 20px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+    width: 19.4%;
+}
+
+
+.container {
+    box-shadow:0 0 20px white;
+    border-radius: 15px;
+    padding: 2px 16px;
+}
+
+.user {
+    text-align: right;
+    color: white;
+    margin-right: 2%;
+}
+
+.icon {
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    right: 0;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.cart-index{
+    margin-top: 50px;
+}
+
+.links{
+    text-align: left;
+}
+
+.btn-increase {
+    background-image: url(sort-up.png);
+}
+
+.btn-decrease {
+    background-image: url(sort-down.png);
+}
+
+.page{
+    margin-left: 30%;
+}
+
+.db-left-side {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: blue;
+}
+
+.db-right-side {
+  height: 100%;
+  width: 50%;
+  float: right;
+  background-color: orange;
+}
+
+.db-user-container {
+    display: block;
+    padding-left: 3%;
+    background-color: white;
+    max-width: 31%;
+    float: right;
+    padding-top: 14%;
+    margin-top: 16%;
+    margin-right: 27px;
+}
+
+.db-profile-pic-container {
+    position: absolute;
+    top: 120px;
+    right: 30%;
+}
+
+.profile-pic {
+    float: right;
+    border-radius: 50%;
+    height: auto;
+    max-block-size: 250px;
+    position: inherit;
+}
+
+div.page a:link { color: #FFFFFF; }
+div.page a:visited { color: #C5C5C5; }
+div.page a:hover { color: #6F6F6F; }
+div.page a:active { color: #262626; }
