@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: bike_share_production
+  database: bike_share_production.sqlite3
+  adapter: postgresql
   username: bike_share
   password: <%= ENV['BIKE_SHARE_DATABASE_PASSWORD'] %>
