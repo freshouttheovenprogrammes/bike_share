@@ -12,11 +12,3 @@
 //
 //= require rails-ujs
 //= require_tree .
-
-$ ->
-  flashCallback = ->
-    $(".alert").fadeOut()
-  $(".alert").bind 'click', (ev) =>
-    $(".alert").fadeOut()
-  setTimeout flashCallback, 3000
-  
