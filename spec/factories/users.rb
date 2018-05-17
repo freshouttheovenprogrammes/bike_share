@@ -26,11 +26,11 @@ FactoryBot.define do
     end
   end
 
-  factory :admin_app_cred, class: User do
+  factory :admin_app, class: User do
     sequence :first_name { |n| "first_name#{n}" }
     sequence :last_name { |n| "last_name#{n}" }
     sequence :email { |n| "email#{n}@gmail.com" }
-    sequence role: 0
+    sequence :role { |n| "admin" }
     before(:create) do |user|
       user.create_app_credential(password: "test123")
     end
