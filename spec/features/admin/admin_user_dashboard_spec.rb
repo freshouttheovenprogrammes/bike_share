@@ -5,7 +5,6 @@ describe "As a logged in admin" do
     let(:admin) { FactoryBot.create(:admin_app) }
     before(:each) do
       visit signin_path
-      require "pry"; binding.pry
 
       fill_in "username", with: admin.username
       fill_in "password", with: admin.app_credential.password
