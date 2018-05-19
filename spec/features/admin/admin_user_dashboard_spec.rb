@@ -11,8 +11,10 @@ describe "As a logged in admin" do
 
       click_on "Submit"
     end
+
     it "I will see a heading on the page that says Admin Dashboard" do
       expect(current_path).to eq admin_dashboard_path
+      expect(page).to have_content "Admin Dashboard"
     end
   end
 end
