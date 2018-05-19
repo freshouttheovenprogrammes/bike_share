@@ -27,6 +27,7 @@ FactoryBot.define do
   end
 
   factory :admin_app, class: User do
+    sequence :username { |n| "username#{n}" }
     sequence :first_name { |n| "first_name#{n}" }
     sequence :last_name { |n| "last_name#{n}" }
     sequence :email { |n| "email#{n}@gmail.com" }

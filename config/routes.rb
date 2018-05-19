@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   patch "/increase", to: 'cart#increase'
   patch "/decrease", to: 'cart#decrease'
   resources :accessories, only: [:index]
-  resources :admin
-  get 'admin/dashboard', to: 'admin#dashboard', as: 'admin_dashboard'
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+  end
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]

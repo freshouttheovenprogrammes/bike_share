@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   helper_method :current_user
   helper_method :current_admin?
-  
+
   def set_cart
     @cart ||= Cart.new(session[:cart])
   end
