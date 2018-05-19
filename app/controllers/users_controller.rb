@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard]
+  before_action :find_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -18,6 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    require "pry"; binding.pry
+  end
+
+  def update
+    @user.update
+  end
+
   def dashboard
   end
 
@@ -33,5 +42,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 end
