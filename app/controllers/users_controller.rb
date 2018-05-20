@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    require "pry"; binding.pry
   end
 
   def update
