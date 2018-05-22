@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard]
   before_action :find_user, only: [:edit, :update]
+  before_action :set_resource, only: [:edit]
+  before_action :require_permission, only: [:edit]
 
   def new
     @user = User.new
@@ -51,5 +53,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def set_resource
+    require_permission(User)
   end
 end

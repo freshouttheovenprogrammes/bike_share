@@ -12,6 +12,16 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def require_permission(resource)
+    if current_user != resource.find(params[:id])
+      not_found
+    end
+  end
+
+  def not_found
+    render status: 404
+  end
+
   def current_admin?
     current_user && current_user.admin?
   end
