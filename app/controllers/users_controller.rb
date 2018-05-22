@@ -23,7 +23,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update
+    @user.update(user_params)
+    if @user.update(user_params)
+      # require "pry"; binding.pry
+      redirect_to dashboard_path(@user)
+    else
+      render :edit
+    end
   end
 
   def dashboard
@@ -32,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:first_name, :last_name, :email)
+    params[:user].permit(:first_name, :last_name, :email, :username)
   end
 
   def credential_params

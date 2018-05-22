@@ -14,5 +14,8 @@
   <%= f.label :email %>
   <%= f.text_field :email, placeholder: "#{@user.email}" %>
 
-  <%= submit_tag 'Save' %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit 'Update Profile' %>
 <% end %>
