@@ -13,6 +13,6 @@ context "as an admin" do
   it "i cannot change another users profile" do
     visit edit_user_path(user)
 
-    page.status_code.should be 404
+    expect(status_code).to eq 404
   end
 end
