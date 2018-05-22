@@ -17,6 +17,7 @@
     <div class="db-user-container">
       <div class="db-profile-pic-container">
         <%= image_tag @user.image, class: "profile-pic" %>
+        <%= link_to "Edit Account Details", edit_user_path(@user.id) %>
       </div>
 
       <div class="name-container">

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 context "as an admin" do
   let(:admin) { FactoryBot.create(:admin_app) }
-  
+
   before(:each) do
     visit signin_path
 
@@ -21,7 +21,7 @@ context "as an admin" do
 
     click_on "Update Profile"
 
-    expect(current_path).to eq dashboard_path(app_user)
+    expect(current_path).to eq dashboard_path(admin)
     expect(page).to have_content "changed"
     expect(page).to have_content "new name"
     expect(page).to have_content "new.email@gmail.com"
