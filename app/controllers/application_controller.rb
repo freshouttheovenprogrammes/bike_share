@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   def require_permission(resource)
     if current_user != resource.find(params[:id])
       not_found
+    elsif
+      current_user == resource.find(params[:id])
     end
   end
 

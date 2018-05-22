@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard]
   before_action :find_user, only: [:edit, :update]
-  before_action :set_resource, only: [:edit]
-  before_action :require_permission, only: [:edit]
-
+  before_action :set_resource, only: [:edit, :update]
+  
   def new
     @user = User.new
   end
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     if @user.update(user_params)
-      # require "pry"; binding.pry
       redirect_to dashboard_path(@user)
     else
       render :edit
