@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
   def current_admin?
     current_user && current_user.admin?
   end
+
+  def require_login
+    redirect_to signin_path unless current_user
+  end
 end

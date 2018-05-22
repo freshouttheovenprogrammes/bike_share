@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard]
   before_action :find_user, only: [:edit, :update]
   before_action :set_resource, only: [:edit, :update]
-  
+  before_action :require_login, only: [:dashboard]
+
   def new
     @user = User.new
   end
