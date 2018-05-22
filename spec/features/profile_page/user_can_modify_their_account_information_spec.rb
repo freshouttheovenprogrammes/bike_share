@@ -14,7 +14,9 @@ describe "As a registered user on their profile page" do
   end
   context "I can update my own information" do
     it "from my profile page" do
-      click_link "Edit Account Details" # later change to click on
+      
+      click_link "Edit Account Details"
+
       expect(current_path).to eq edit_user_path(app_user)
     end
   end
