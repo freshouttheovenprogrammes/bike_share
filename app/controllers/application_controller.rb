@@ -26,6 +26,12 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
 
+  def admin_only
+    if !current_admin?
+      not_found
+    end
+  end
+
   def require_login
     redirect_to signin_path unless current_user
   end

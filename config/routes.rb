@@ -15,15 +15,16 @@ Rails.application.routes.draw do
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
+  resources :conditions
   get '/dashboard', to: 'users#dashboard'
-  resource :home, only: [:show]
+  resource  :home, only: [:show]
   resources :items
   resources :lessons, only: [:index]
-  resources :tools, only: [:index]
+  resources :orders, only: [:index]
   resources :sessions, only: [:create, :destroy]
   resources :stations
+  resources :tools, only: [:index]
   resources :trips
-  resources :conditions
   resources :users, except: [:show]
   namespace :user do
     resources :orders, except: [:new]
