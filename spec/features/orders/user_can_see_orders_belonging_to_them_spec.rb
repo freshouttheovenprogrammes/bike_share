@@ -21,8 +21,9 @@ describe "As an authenticated user" do
      order.assign_order(app_user)
      order2 = Order.create!(total: 22, status: 1, user: user2)
      order2.assign_order(user2)
+
      visit user_orders_path(app_user)
-     save_and_open_page
+
      expect(page).to_not have_content order2.status
      expect(page).to_not have_content order2.total
 

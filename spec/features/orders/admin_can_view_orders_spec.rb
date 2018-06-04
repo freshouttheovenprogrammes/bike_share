@@ -12,7 +12,7 @@ describe "As a regular user" do
     end
       it "I cannot see all orders" do
         FactoryBot.create(:order_ordered)
-        visit orders_path
+        visit admin_orders_path
 
         expect(status_code).to eq 404
     end
