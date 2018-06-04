@@ -1,6 +1,5 @@
 class User::OrdersController < ApplicationController
   def create
-    require "pry"; binding.pry
     user = User.find(session[:user_id])
     @order = user.orders.create(total: @cart.total_sum, status: "Ordered")
     session[:cart].map do |accessory_id, quantity|
