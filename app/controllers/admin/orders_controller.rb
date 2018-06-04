@@ -1,5 +1,5 @@
-class Admin::OrdersController < ApplicationController
-  # before_action :admin_only, only: [:index]
+class Admin::OrdersController < Admin::BaseController
+  before_action :require_admin, only: [:index]
 
   def index
     @orders = Order.all

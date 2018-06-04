@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   helper_method :current_user
   helper_method :current_admin?
+  helper_method :admin_only
 
   def set_cart
     @cart ||= Cart.new(session[:cart])
@@ -27,9 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_only
-    if !current_admin?
-      not_found
-    end
+    not_found unless current_admin?
   end
 
   def require_login
