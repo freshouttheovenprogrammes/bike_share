@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :accessories, only: [:index]
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
-    resources :orders, only: [:index]
+    resources :orders, only: [:index, :show]
   end
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
