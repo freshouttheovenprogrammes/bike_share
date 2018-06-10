@@ -6,7 +6,7 @@ FactoryBot.define do
     sequence :image { |n| "image#{n}.jpg" }
     sequence :status { "active" }
     sequence :quantity { |n| n }
-    sequence category_id: 1
+    sequence category_id: 0
   end
 
   factory :bike, class: Item do

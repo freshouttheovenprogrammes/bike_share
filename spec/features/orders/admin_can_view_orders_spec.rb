@@ -22,8 +22,9 @@ end
 describe "As an admin" do
   context "when I go to look at an order" do
     let(:admin) { FactoryBot.create(:admin_app) }
-    let(:order) { FactoryBot.create(:order_ordered)}
-    category = Category.create!(title: "bikes")
+    let(:order) { FactoryBot.build(:order_ordered)}
+    category = FactoryBot.build(:category)
+    binding.pry
 
     before(:each) do
       order.assign_order(admin)
