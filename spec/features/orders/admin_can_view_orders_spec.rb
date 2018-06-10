@@ -23,7 +23,7 @@ describe "As an admin" do
   context "when I go to look at an order" do
     let(:admin) { FactoryBot.create(:admin_app) }
     let(:order) { FactoryBot.create(:order_ordered)}
-    let(:item)  { FactoryBot.create(:item) }
+    category = Category.create!(title: "bikes")
 
     before(:each) do
       order.assign_order(admin)
@@ -34,6 +34,15 @@ describe "As an admin" do
       fill_in "password", with: admin.app_credential.password
 
       click_on "Submit"
+
+      item = Item.create!(title: "Test", description: "Merles a dog", price: 500, image: 'cruiser.png', status: "active", quantity: 2, category: category)
+      visit bikes_path
+
+      click_on "Add Item To Cart"
+
+      visit cart_index_path(user)
+
+      click_on "Checkout"
     end
     it "I can see order details" do
       order = FactoryBot.create(:order_ordered)
@@ -43,7 +52,7 @@ describe "As an admin" do
       expect(page).to have_content item.quantity
       expect(page).to have_content item.price
       expect(page).to have_content order.total
-      expect(page).to have_content item.status
+      expect(page).to have_content order.status
     end
   end
 end
