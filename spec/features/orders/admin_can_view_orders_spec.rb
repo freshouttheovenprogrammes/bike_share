@@ -21,18 +21,15 @@ end
 
 describe "As an admin" do
   context "when I go to look at an order" do
-    let(:admin) { FactoryBot.create(:admin_app) }
-    let(:order) { FactoryBot.build(:order_ordered)}
-    category = FactoryBot.build(:category)
-    binding.pry
-
-    before(:each) do
-      order.assign_order(admin)
+    it "I can see order details" do
+      admin    = FactoryBot.create(:admin_app)
+      app_user = FactoryBot.create(:app_user)
+      category = FactoryBot.build(:category)
 
       visit signin_path
 
-      fill_in "username", with: admin.username
-      fill_in "password", with: admin.app_credential.password
+      fill_in "username", with: app_user.username
+      fill_in "password", with: app_user.app_credential.password
 
       click_on "Submit"
 
@@ -41,19 +38,17 @@ describe "As an admin" do
 
       click_on "Add Item To Cart"
 
-      visit cart_index_path(user)
+      visit cart_index_path(app_user)
 
       click_on "Checkout"
-    end
-    it "I can see order details" do
-      order = FactoryBot.create(:order_ordered)
-      visit admin_order_path(order)
+
+      visit admin_order_path(admin)
 
       expect(page).to have_link    item.title
       expect(page).to have_content item.quantity
       expect(page).to have_content item.price
-      expect(page).to have_content order.total
-      expect(page).to have_content order.status
+      expect(page).to have_content "500"
+      expect(page).to have_content "Ordered"
     end
   end
 end

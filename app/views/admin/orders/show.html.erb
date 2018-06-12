@@ -1,5 +1,5 @@
 <% @items.each do |item| %>
-  <%= link_to "#{item.title}", item_show_path(item) %><br>
+  <%= link_to "#{item.title}", item_path(item) %><br>
   <%= item.quantity %></br>
   <%= item.price %></br>
 
