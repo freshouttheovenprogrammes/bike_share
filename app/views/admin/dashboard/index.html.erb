@@ -1,0 +1,30 @@
+<div class="db-page">
+
+  <div class="db-left-side">
+
+    <div class="db-welcome-message">
+      <h3>Admin Dashboard</h3>
+    </div>
+
+    <div class="db-about-us">
+
+    </div>
+
+  </div>
+
+  <div class="db-right-side">
+
+    <div class="db-user-container">
+      <div class="db-profile-pic-container">
+        <%= image_tag @user.image, class: "profile-pic" %>
+        <%= link_to "Edit Account Details", edit_user_path(@user.id) %>
+      </div>
+
+      <div class="name-container">
+        <%= "#{@user.profile_info}" %></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
