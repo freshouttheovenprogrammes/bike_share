@@ -50,6 +50,21 @@ describe "As a registered user" do
           expect(page).to have_link "Home"
           expect(page).to have_link "Sign Out"
           expect(page).to have_link "Visit Store"
+          expect(page).to have_content "Logged in as #{app_user.username}"
+        end
+
+        it "cannot access admin dashboard" do
+          visit root_path
+
+          click_link "Log In"
+
+          fill_in "username", with: app_user.username
+          fill_in "password", with: app_user.app_credential.password
+
+          click_on "Submit"
+
+          visit admin_dashboard_path
+          expect(page).to have_http_status(404)
         end
       end
     end

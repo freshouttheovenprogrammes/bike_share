@@ -4,9 +4,14 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username])
-    if user && user.app_credential.authenticate(params[:password])
+    if user.default?
+      user.app_credential.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/dashboard"
+    elsif user.admin?
+      user.app_credential.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to admin_dashboard_path
     else
       flash[:error] = "Could not validate credentials"
       redirect_to root_path

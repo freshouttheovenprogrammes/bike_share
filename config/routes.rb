@@ -9,18 +9,22 @@ Rails.application.routes.draw do
   patch "/increase", to: 'cart#increase'
   patch "/decrease", to: 'cart#decrease'
   resources :accessories, only: [:index]
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    resources :orders, only: [:index, :show]
+  end
   resources :bikes, only: [:index]
   resources :categories, only: [:index]
   resources :cart, only: [:create, :index, :destroy]
+  resources :conditions
   get '/dashboard', to: 'users#dashboard'
-  resource :home, only: [:show]
+  resource  :home, only: [:show]
   resources :items
   resources :lessons, only: [:index]
-  resources :tools, only: [:index]
   resources :sessions, only: [:create, :destroy]
   resources :stations
+  resources :tools, only: [:index]
   resources :trips
-  resources :conditions
   resources :users, except: [:show]
   namespace :user do
     resources :orders, except: [:new]

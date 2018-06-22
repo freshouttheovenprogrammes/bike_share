@@ -246,9 +246,12 @@ DEPENDENCIES
   shoulda-matchers (~> 3.1)
   sqlite3
   tzinfo-data
-  uglifier (~> 2.7)
+  uglifier (>= 4.1.10)
   web-console (>= 3.3.0)
   will_paginate (~> 3.1.0)
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.16.1

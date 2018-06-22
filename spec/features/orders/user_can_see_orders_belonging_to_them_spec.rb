@@ -5,7 +5,6 @@ describe "As an authenticated user" do
   let(:app_user) { FactoryBot.create(:app_user) }
   let (:user2) { FactoryBot.create(:app_user) }
   let(:order) { FactoryBot.create(:order_ordered) }
-
   context "when I visit /orders" do
 
     before(:each) do
@@ -18,10 +17,11 @@ describe "As an authenticated user" do
     end
 
    it "I should see all orders belonging to me and I can view a single order" do
-     order.assign_order(app_user)
+     order = Order.create!(total: 23, status: 0, user: app_user)
      order2 = Order.create!(total: 22, status: 1, user: user2)
 
      visit user_orders_path(app_user)
+
      expect(page).to_not have_content order2.status
      expect(page).to_not have_content order2.total
 

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard]
+  before_action :find_user, only: [:edit, :update]
+  before_action :set_resource, only: [:edit, :update]
+  before_action :require_login, only: [:dashboard]
 
   def new
     @user = User.new
@@ -18,13 +21,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @user.update(user_params)
+    if @user.update(user_params)
+      redirect_to dashboard_path(@user)
+    else
+      render :edit
+    end
+  end
+
   def dashboard
   end
 
   private
 
   def user_params
-    params[:user].permit(:first_name, :last_name, :email)
+    params[:user].permit(:first_name, :last_name, :email, :username)
   end
 
   def credential_params
@@ -33,5 +48,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def find_user
+    @user = User.find(params[:id])
+  end
+
+  def set_resource
+    require_permission(User)
   end
 end

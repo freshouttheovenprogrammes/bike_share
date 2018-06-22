@@ -20,6 +20,7 @@ describe "As a registered user" do
       user = User.last
 
       visit bikes_path
+      
       within('#bike_1') do
         click_on "Add Item To Cart"
       end
